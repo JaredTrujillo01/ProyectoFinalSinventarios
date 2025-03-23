@@ -31,7 +31,6 @@
             dataGridView1 = new DataGridView();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
             textBox1 = new TextBox();
             label4 = new Label();
             textBox2 = new TextBox();
@@ -46,6 +45,7 @@
             button2 = new Button();
             button1 = new Button();
             button3 = new Button();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -61,32 +61,22 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Arial Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(5, 254);
             label1.Name = "label1";
-            label1.Size = new Size(221, 27);
+            label1.Size = new Size(248, 32);
             label1.TabIndex = 2;
             label1.Text = "Lista de Productos";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Arial", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(12, 20);
+            label2.Font = new Font("Arial Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(12, 9);
             label2.Name = "label2";
-            label2.Size = new Size(254, 27);
+            label2.Size = new Size(282, 32);
             label2.TabIndex = 3;
             label2.Text = "Gestion de Productos";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(12, 57);
-            label3.Name = "label3";
-            label3.Size = new Size(87, 21);
-            label3.TabIndex = 4;
-            label3.Text = "Nombre:";
             // 
             // textBox1
             // 
@@ -212,11 +202,22 @@
             button3.Text = "Eliminar ";
             button3.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(12, 57);
+            label3.Name = "label3";
+            label3.Size = new Size(87, 21);
+            label3.TabIndex = 22;
+            label3.Text = "Nombre:";
+            // 
             // Productos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1200, 631);
+            Controls.Add(label3);
             Controls.Add(button3);
             Controls.Add(button1);
             Controls.Add(button2);
@@ -231,7 +232,6 @@
             Controls.Add(textBox2);
             Controls.Add(label4);
             Controls.Add(textBox1);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
@@ -248,7 +248,6 @@
         private DataGridView dataGridView1;
         private Label label1;
         private Label label2;
-        private Label label3;
         private TextBox textBox1;
         private Label label4;
         private TextBox textBox2;
@@ -263,5 +262,6 @@
         private Button button2;
         private Button button1;
         private Button button3;
+        private Label label3;
     }
 }
