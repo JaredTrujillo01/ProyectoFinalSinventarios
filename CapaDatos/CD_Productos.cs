@@ -23,5 +23,54 @@ namespace CapaDatos
             conexion.CerrarConexion();
             return tabla;
         }
+        public void Insertar(string nombre, string descripcion, decimal precioUnitario, int stock, int idProveedor, int idCategoria)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "INSERT INTO Producto (Nombre, Descripcion, PrecioUnitario, Stock, ProveedorID, CategoriaID ) " +
+                                  "VALUES (@nombre, @descripcion, @precioUnitario, @stock, @idProveedor, @idCategoria)";
+
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@nombre", nombre);
+            comando.Parameters.AddWithValue("@descripcion", descripcion);
+            comando.Parameters.AddWithValue("@precioUnitario", precioUnitario);
+            comando.Parameters.AddWithValue("@stock", stock);
+            comando.Parameters.AddWithValue("@idProveedor", idProveedor);
+            comando.Parameters.AddWithValue("@idCategoria", idCategoria);
+
+            comando.ExecuteNonQuery(); 
+            conexion.CerrarConexion();
+        }
+        public void ActualizarProducto(int id, string nombre, string descripcion, decimal precio, int stock, int idProveedor, int idCategoria)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "UPDATE Producto SET Nombre = @nombre, Descripcion = @descripcion, PrecioUnitario = @precio, Stock = @stock, ProveedorID = @idProveedor, CategoriaID = @idCategoria WHERE IdProducto = @id";
+
+            comando.Parameters.Clear();
+
+            comando.Parameters.AddWithValue("@id", id);
+            comando.Parameters.AddWithValue("@nombre", nombre);
+            comando.Parameters.AddWithValue("@descripcion", descripcion);
+            comando.Parameters.AddWithValue("@precio", precio);
+            comando.Parameters.AddWithValue("@stock", stock);
+            comando.Parameters.AddWithValue("@idProveedor", idProveedor);
+            comando.Parameters.AddWithValue("@idCategoria", idCategoria);
+
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
+        }
+
+        public void EliminarProducto(int id)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "DELETE FROM Producto WHERE IdProducto = @id";
+
+            comando.Parameters.Clear();
+
+            comando.Parameters.AddWithValue("@id", id);
+
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
+        }
+
     }
 }

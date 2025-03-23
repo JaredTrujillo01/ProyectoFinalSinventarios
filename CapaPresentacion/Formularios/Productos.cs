@@ -15,6 +15,7 @@ namespace CapaPresentacion.Formularios
     public partial class Productos : Form
     {
         CN_Producto objetoCN = new CN_Producto();
+        int idProducto = 0;
         public Productos()
         {
             InitializeComponent();
@@ -27,7 +28,100 @@ namespace CapaPresentacion.Formularios
 
         private void mostrarProductos()
         {
-           dataGridView1.DataSource = objetoCN.Mostrar();
+            CN_Producto objeto = new CN_Producto();
+            dataGridView1.DataSource = objeto.Mostrar();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                objetoCN.InsertarProducto(
+                    txtNombre.Text,
+                    txtDesc.Text,
+                    Convert.ToDecimal(txtPrecio.Text),
+                    Convert.ToInt32(txtStock.Text),
+                    Convert.ToInt32(CBCate.Text),
+                    Convert.ToInt32(CBProvee.Text)
+                );
+
+                MessageBox.Show("Producto insertado correctamente");
+
+                mostrarProductos();
+                limpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al insertar el producto: " + ex.Message);
+            }
+        }
+        private void limpiarCampos()
+        {
+            txtNombre.Clear();
+            txtDesc.Clear();
+            txtPrecio.Clear();
+            txtStock.Clear();
+            CBCate.SelectedIndex = -1;
+            CBProvee.SelectedIndex = -1;
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                objetoCN.ActualizarProducto(
+                    idProducto,
+                    txtNombre.Text,
+                    txtDesc.Text,
+                    Convert.ToDecimal(txtPrecio.Text),
+                    Convert.ToInt32(txtStock.Text),
+                    Convert.ToInt32(CBCate.Text),
+                    Convert.ToInt32(CBProvee.Text)
+                );
+
+                MessageBox.Show("Producto actualizado correctamente");
+                mostrarProductos(); // ✅ Refrescar el DataGridView después de actualizar
+                limpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar el producto: " + ex.Message);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (idProducto != 0)
+            {
+                try
+                {
+                    objetoCN.EliminarProducto(idProducto);
+                    MessageBox.Show("Producto eliminado correctamente");
+                    mostrarProductos(); // ✅ Refrescar el DataGridView después de eliminar
+                    limpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar el producto: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un producto para eliminar.");
+            }
+        }
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                idProducto = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                txtNombre.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtDesc.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtPrecio.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtStock.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                CBCate.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                CBProvee.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+            }
         }
     }
 }

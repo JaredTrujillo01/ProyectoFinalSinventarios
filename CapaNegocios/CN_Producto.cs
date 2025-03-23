@@ -17,6 +17,20 @@ namespace CapaNegocios
             DataTable tabla = new DataTable();
             tabla = objetoCD.Mostrar();
             return tabla;
-        } 
+        }
+        public void InsertarProducto(string nombre, string descripcion, decimal precioUnitario, int stock, int idProveedor, int idCategoria)
+        {
+            objetoCD.Insertar(nombre, descripcion, precioUnitario, stock, idCategoria, idProveedor);
+        }
+
+        public void ActualizarProducto(int id, string nombre, string descripcion, decimal precio, int stock, int idProveedor, int idCategoria)
+        {
+            objetoCD.ActualizarProducto(id, nombre, descripcion, precio, stock, idProveedor, idCategoria);
+        }
+
+        public void EliminarProducto(int id)
+        {
+            objetoCD.EliminarProducto(id);
+        }
     }
 }
