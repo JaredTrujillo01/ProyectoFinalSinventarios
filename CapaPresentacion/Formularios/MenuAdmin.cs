@@ -16,5 +16,33 @@ namespace CapaPresentacion.Formularios
         {
             InitializeComponent();
         }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            Productos productos = new Productos();
+            productos.Show();
+            //this.Hide();
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            Proveedores proveedores = new Proveedores();
+            proveedores.Show();
+            //this.Hide();
+        }
+
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+            Compras compras = new Compras();
+            compras.Show();
+            //this.Hide();
+        }
+
+        private void btnCategorías_Click(object sender, EventArgs e)
+        {
+            Categorias categorias = new Categorias();
+            categorias.Show();
+            //this.Hide();
+        }
     }
 }

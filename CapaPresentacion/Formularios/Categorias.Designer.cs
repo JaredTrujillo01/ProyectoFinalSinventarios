@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Categorias));
             label2 = new Label();
             label3 = new Label();
             txtNombre = new TextBox();
-            button2 = new Button();
+            btnGuardar = new Button();
             dataGridView1 = new DataGridView();
             btnEliminar = new Button();
             btnCancelar = new Button();
@@ -42,11 +43,11 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(60, 9);
+            label2.Location = new Point(104, 9);
             label2.Name = "label2";
-            label2.Size = new Size(292, 32);
+            label2.Size = new Size(245, 27);
             label2.TabIndex = 4;
-            label2.Text = "Gestion de Categorias";
+            label2.Text = "Gestión de Categorías";
             // 
             // label3
             // 
@@ -54,7 +55,7 @@
             label3.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.Location = new Point(12, 67);
             label3.Name = "label3";
-            label3.Size = new Size(83, 22);
+            label3.Size = new Size(64, 17);
             label3.TabIndex = 5;
             label3.Text = "Nombre:";
             // 
@@ -63,20 +64,23 @@
             txtNombre.Location = new Point(86, 66);
             txtNombre.Margin = new Padding(3, 2, 3, 2);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(221, 26);
+            txtNombre.Size = new Size(221, 22);
             txtNombre.TabIndex = 6;
             // 
-            // button2
+            // btnGuardar
             // 
-            button2.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(327, 144);
-            button2.Margin = new Padding(3, 2, 3, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(87, 41);
-            button2.TabIndex = 20;
-            button2.Text = "Guardar";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnGuardar.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
+            btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnGuardar.Location = new Point(329, 124);
+            btnGuardar.Margin = new Padding(3, 2, 3, 2);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(97, 41);
+            btnGuardar.TabIndex = 20;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.TextAlign = ContentAlignment.MiddleRight;
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += button2_Click;
             // 
             // dataGridView1
             // 
@@ -92,37 +96,43 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEliminar.Location = new Point(327, 189);
+            btnEliminar.Font = new Font("Microsoft Sans Serif", 8.25F);
+            btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
+            btnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEliminar.Location = new Point(329, 169);
             btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(87, 43);
+            btnEliminar.Size = new Size(97, 43);
             btnEliminar.TabIndex = 22;
             btnEliminar.Text = "Eliminar";
+            btnEliminar.TextAlign = ContentAlignment.MiddleRight;
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
             // btnCancelar
             // 
-            btnCancelar.Font = new Font("Arial", 9.75F);
-            btnCancelar.Location = new Point(351, 265);
+            btnCancelar.Font = new Font("Microsoft Sans Serif", 8.25F);
+            btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
+            btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCancelar.Location = new Point(329, 219);
             btnCancelar.Margin = new Padding(3, 2, 3, 2);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(74, 28);
+            btnCancelar.Size = new Size(97, 43);
             btnCancelar.TabIndex = 24;
             btnCancelar.Text = "Cancelar";
+            btnCancelar.TextAlign = ContentAlignment.MiddleRight;
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // Categorias
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(426, 293);
+            ClientSize = new Size(438, 293);
             Controls.Add(btnCancelar);
             Controls.Add(btnEliminar);
             Controls.Add(dataGridView1);
-            Controls.Add(button2);
+            Controls.Add(btnGuardar);
             Controls.Add(txtNombre);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -144,7 +154,7 @@
         private Label label2;
         private Label label3;
         private TextBox txtNombre;
-        private Button button2;
+        private Button btnGuardar;
         private DataGridView dataGridView1;
         private Button btnEliminar;
         private Button btnCancelar;

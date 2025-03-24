@@ -23,5 +23,12 @@ namespace CapaPresentacion.Formularios
             menuA.Show();
             this.Hide();
         }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            MenuAdmin menuA = new MenuAdmin();
+            menuA.Show();
+            this.Hide();
+        }
     }
 }
