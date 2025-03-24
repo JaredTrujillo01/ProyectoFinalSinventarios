@@ -123,5 +123,12 @@ namespace CapaPresentacion.Formularios
                 CBProvee.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            MenuAdmin menuA = new MenuAdmin();
+            menuA.Show();
+            this.Hide();
+        }
     }
 }

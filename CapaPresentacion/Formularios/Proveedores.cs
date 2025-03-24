@@ -94,7 +94,7 @@ namespace CapaPresentacion.Formularios
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if(proveedorId != 0)
+            if (proveedorId != 0)
             {
                 try
                 {
@@ -112,6 +112,13 @@ namespace CapaPresentacion.Formularios
             {
                 MessageBox.Show("Seleccione un proveedor");
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            MenuAdmin menuA = new MenuAdmin();
+            menuA.Show();
+            this.Hide();
         }
     }
 }

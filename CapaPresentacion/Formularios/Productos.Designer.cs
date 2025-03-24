@@ -46,6 +46,7 @@
             btnActualizar = new Button();
             btnEliminar = new Button();
             label3 = new Label();
+            btnCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -216,11 +217,24 @@
             label3.TabIndex = 22;
             label3.Text = "Nombre:";
             // 
+            // btnCancelar
+            // 
+            btnCancelar.Font = new Font("Arial", 9.75F);
+            btnCancelar.Location = new Point(939, 254);
+            btnCancelar.Margin = new Padding(3, 2, 3, 2);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(108, 28);
+            btnCancelar.TabIndex = 23;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
             // Productos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1200, 631);
+            Controls.Add(btnCancelar);
             Controls.Add(label3);
             Controls.Add(btnEliminar);
             Controls.Add(btnActualizar);
@@ -267,5 +281,6 @@
         private Button btnActualizar;
         private Button btnEliminar;
         private Label label3;
+        private Button btnCancelar;
     }
 }

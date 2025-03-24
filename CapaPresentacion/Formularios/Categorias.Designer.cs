@@ -34,6 +34,7 @@
             button2 = new Button();
             dataGridView1 = new DataGridView();
             btnEliminar = new Button();
+            btnCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -41,9 +42,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(86, 21);
+            label2.Location = new Point(60, 9);
             label2.Name = "label2";
-            label2.Size = new Size(245, 27);
+            label2.Size = new Size(292, 32);
             label2.TabIndex = 4;
             label2.Text = "Gestion de Categorias";
             // 
@@ -53,7 +54,7 @@
             label3.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.Location = new Point(12, 67);
             label3.Name = "label3";
-            label3.Size = new Size(64, 17);
+            label3.Size = new Size(83, 22);
             label3.TabIndex = 5;
             label3.Text = "Nombre:";
             // 
@@ -62,7 +63,7 @@
             txtNombre.Location = new Point(86, 66);
             txtNombre.Margin = new Padding(3, 2, 3, 2);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(221, 22);
+            txtNombre.Size = new Size(221, 26);
             txtNombre.TabIndex = 6;
             // 
             // button2
@@ -101,11 +102,24 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
+            // btnCancelar
+            // 
+            btnCancelar.Font = new Font("Arial", 9.75F);
+            btnCancelar.Location = new Point(351, 265);
+            btnCancelar.Margin = new Padding(3, 2, 3, 2);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(74, 28);
+            btnCancelar.TabIndex = 24;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
             // Categorias
             // 
-            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(426, 293);
+            Controls.Add(btnCancelar);
             Controls.Add(btnEliminar);
             Controls.Add(dataGridView1);
             Controls.Add(button2);
@@ -133,5 +147,6 @@
         private Button button2;
         private DataGridView dataGridView1;
         private Button btnEliminar;
+        private Button btnCancelar;
     }
 }

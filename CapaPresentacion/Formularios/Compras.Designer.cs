@@ -43,6 +43,7 @@
             button2 = new Button();
             button1 = new Button();
             button3 = new Button();
+            btnCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -176,11 +177,24 @@
             button3.Text = "Realizar Compra";
             button3.UseVisualStyleBackColor = true;
             // 
+            // btnCancelar
+            // 
+            btnCancelar.Font = new Font("Arial", 9.75F);
+            btnCancelar.Location = new Point(13, 418);
+            btnCancelar.Margin = new Padding(3, 2, 3, 2);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(108, 28);
+            btnCancelar.TabIndex = 25;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
             // Compras
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 457);
+            Controls.Add(btnCancelar);
             Controls.Add(button3);
             Controls.Add(button1);
             Controls.Add(button2);
@@ -216,5 +230,6 @@
         private Button button2;
         private Button button1;
         private Button button3;
+        private Button btnCancelar;
     }
 }

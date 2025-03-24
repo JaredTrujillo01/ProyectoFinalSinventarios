@@ -88,5 +88,12 @@ namespace CapaPresentacion.Formularios
                 MessageBox.Show("Seleccione una categoria");
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            MenuAdmin menuA = new MenuAdmin();
+            menuA.Show();
+            this.Hide();
+        }
     }
 }
