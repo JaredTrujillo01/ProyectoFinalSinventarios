@@ -12,8 +12,11 @@ namespace CapaPresentacion
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Categorias());
+            //ApplicationConfiguration.Initialize();
+            //Application.Run(new Categorias());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new InicioSesion());
         }
     }
 }
