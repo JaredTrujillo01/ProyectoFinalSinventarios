@@ -45,7 +45,7 @@
             label2.Font = new Font("Arial Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(104, 9);
             label2.Name = "label2";
-            label2.Size = new Size(245, 27);
+            label2.Size = new Size(292, 32);
             label2.TabIndex = 4;
             label2.Text = "Gestión de Categorías";
             // 
@@ -55,7 +55,7 @@
             label3.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.Location = new Point(12, 67);
             label3.Name = "label3";
-            label3.Size = new Size(64, 17);
+            label3.Size = new Size(83, 22);
             label3.TabIndex = 5;
             label3.Text = "Nombre:";
             // 
@@ -64,7 +64,7 @@
             txtNombre.Location = new Point(86, 66);
             txtNombre.Margin = new Padding(3, 2, 3, 2);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(221, 22);
+            txtNombre.Size = new Size(221, 26);
             txtNombre.TabIndex = 6;
             // 
             // btnGuardar
@@ -93,6 +93,7 @@
             dataGridView1.Size = new Size(292, 171);
             dataGridView1.TabIndex = 21;
             dataGridView1.CellClick += dataGridView1_CellClick;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // btnEliminar
             // 
@@ -126,7 +127,7 @@
             // 
             // Categorias
             // 
-            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(438, 293);
             Controls.Add(btnCancelar);

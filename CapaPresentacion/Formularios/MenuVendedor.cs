@@ -21,7 +21,7 @@ namespace CapaPresentacion.Formularios
         {
             Ventas ventas = new Ventas();
             ventas.Show();
-            //this.Hide();
+            this.Hide();
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace CapaPresentacion.Formularios
         {
             Devoluciones devoluciones = new Devoluciones();
             devoluciones.Show();
-            //this.Hide();
+            this.Hide();
         }
     }
 }
