@@ -72,5 +72,21 @@ namespace CapaDatos
             conexion.CerrarConexion();
         }
 
+        public DataTable BuscarProducto(string valor)
+        {
+            DataTable tablaResultado = new DataTable();
+            comando.Connection = conexion.AbrirConexion();
+
+            comando.CommandText = "SELECT * FROM Producto WHERE Nombre LIKE '%' + @valor + '%'";
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@valor", valor);
+
+            SqlDataReader leer = comando.ExecuteReader();
+            tablaResultado.Load(leer);
+
+            conexion.CerrarConexion();
+            return tablaResultado;
+        }
+
     }
 }

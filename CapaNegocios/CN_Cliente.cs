@@ -33,5 +33,10 @@ namespace CapaNegocios
         {
             objetoCD.EliminarCliente(id);
         }
+
+        public DataTable Buscarclien(string valor)
+        {
+            return objetoCD.BuscarCliente(valor);
+        }
     }
 }

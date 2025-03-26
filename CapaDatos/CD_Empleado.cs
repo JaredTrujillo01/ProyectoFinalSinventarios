@@ -65,5 +65,21 @@ namespace CapaDatos
             }
             return tabla;
         }
+
+        public DataTable BuscarEmpleado(string valor)
+        {
+            DataTable tabla = new DataTable();
+            comando.Connection = conexion.AbrirConexion();
+
+            comando.CommandText = "select * from Empleados where Usuario Like '%' + @valor + '%'";
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@valor", valor);
+
+            SqlDataReader leer = comando.ExecuteReader();
+            tabla.Load(leer);
+
+            conexion.CerrarConexion();
+            return tabla;
+        }
     }
 }

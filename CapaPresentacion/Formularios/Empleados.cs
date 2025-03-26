@@ -13,6 +13,7 @@ namespace CapaPresentacion.Formularios
 {
     public partial class Empleados : Form
     {
+        CN_Empleados CNObjeto = new CN_Empleados();
         public Empleados()
         {
             InitializeComponent();
@@ -34,6 +35,23 @@ namespace CapaPresentacion.Formularios
         {
             CN_Empleados objeto = new CN_Empleados();
             dataGridView1.DataSource = objeto.MostrarEmpleados();
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text.Trim() != "")
+            {
+                dataGridView1.DataSource = CNObjeto.BuscarEmpleado(txtBuscar.Text);
+            }
+            else
+            {
+                MessageBox.Show("Ingrese el usuario que desea buscar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = CNObjeto.BuscarEmpleado(txtBuscar.Text);
         }
     }
 }

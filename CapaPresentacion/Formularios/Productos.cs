@@ -80,7 +80,7 @@ namespace CapaPresentacion.Formularios
                 );
 
                 MessageBox.Show("Producto actualizado correctamente");
-                mostrarProductos(); // ✅ Refrescar el DataGridView después de actualizar
+                mostrarProductos();
                 limpiarCampos();
             }
             catch (Exception ex)
@@ -97,7 +97,7 @@ namespace CapaPresentacion.Formularios
                 {
                     objetoCN.EliminarProducto(idProducto);
                     MessageBox.Show("Producto eliminado correctamente");
-                    mostrarProductos(); // ✅ Refrescar el DataGridView después de eliminar
+                    mostrarProductos();
                     limpiarCampos();
                 }
                 catch (Exception ex)
@@ -129,6 +129,23 @@ namespace CapaPresentacion.Formularios
             MenuAdmin menuA = new MenuAdmin();
             menuA.Show();
             this.Hide();
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text.Trim() != "")
+            {
+                dataGridView1.DataSource = objetoCN.BuscarProducto(txtBuscar.Text);
+            }
+            else
+            {
+                MessageBox.Show("Ingrese el nombre del producto que desea buscar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = objetoCN.BuscarProducto(txtBuscar.Text);
         }
     }
 }

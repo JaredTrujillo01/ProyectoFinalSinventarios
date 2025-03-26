@@ -120,5 +120,22 @@ namespace CapaPresentacion.Formularios
             menuA.Show();
             this.Hide();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text.Trim() != "")
+            {
+                dataGridView1.DataSource = objetoCN.BuscarProveedor(txtBuscar.Text);
+            }
+            else
+            {
+                MessageBox.Show("Ingrese el Nombre del proveedor que desea buscar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = objetoCN.BuscarProveedor(txtBuscar.Text);
+        }
     }
 }

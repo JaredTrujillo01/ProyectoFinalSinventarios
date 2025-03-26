@@ -46,6 +46,8 @@
             dataGridView1 = new DataGridView();
             label7 = new Label();
             btnActualizar = new Button();
+            txtBuscar = new TextBox();
+            BtnBuscar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -221,11 +223,33 @@
             btnActualizar.UseVisualStyleBackColor = true;
             btnActualizar.Click += btnActualizar_Click;
             // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(655, 15);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(281, 27);
+            txtBuscar.TabIndex = 43;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
+            // 
+            // BtnBuscar
+            // 
+            BtnBuscar.Font = new Font("Arial", 9.75F);
+            BtnBuscar.Location = new Point(942, 14);
+            BtnBuscar.Margin = new Padding(3, 2, 3, 2);
+            BtnBuscar.Name = "BtnBuscar";
+            BtnBuscar.Size = new Size(108, 28);
+            BtnBuscar.TabIndex = 44;
+            BtnBuscar.Text = "Buscar";
+            BtnBuscar.UseVisualStyleBackColor = true;
+            BtnBuscar.Click += BtnBuscar_Click;
+            // 
             // Clintes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1067, 423);
+            Controls.Add(BtnBuscar);
+            Controls.Add(txtBuscar);
             Controls.Add(btnActualizar);
             Controls.Add(label7);
             Controls.Add(dataGridView1);
@@ -272,5 +296,7 @@
         private DataGridView dataGridView1;
         private Label label7;
         private Button btnActualizar;
+        private TextBox txtBuscar;
+        private Button BtnBuscar;
     }
 }

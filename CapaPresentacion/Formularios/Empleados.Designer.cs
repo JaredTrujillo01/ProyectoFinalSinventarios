@@ -31,13 +31,15 @@
             btnCancelar = new Button();
             dataGridView1 = new DataGridView();
             label7 = new Label();
+            txtBuscar = new TextBox();
+            BtnBuscar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // btnCancelar
             // 
             btnCancelar.Font = new Font("Arial", 9.75F);
-            btnCancelar.Location = new Point(477, 13);
+            btnCancelar.Location = new Point(876, 9);
             btnCancelar.Margin = new Padding(3, 2, 3, 2);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(108, 28);
@@ -65,11 +67,33 @@
             label7.TabIndex = 41;
             label7.Text = "Lista de Empleados";
             // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(277, 15);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(281, 27);
+            txtBuscar.TabIndex = 42;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
+            // 
+            // BtnBuscar
+            // 
+            BtnBuscar.Font = new Font("Arial", 9.75F);
+            BtnBuscar.Location = new Point(564, 15);
+            BtnBuscar.Margin = new Padding(3, 2, 3, 2);
+            BtnBuscar.Name = "BtnBuscar";
+            BtnBuscar.Size = new Size(108, 28);
+            BtnBuscar.TabIndex = 43;
+            BtnBuscar.Text = "Buscar";
+            BtnBuscar.UseVisualStyleBackColor = true;
+            BtnBuscar.Click += BtnBuscar_Click;
+            // 
             // Empleados
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(996, 450);
+            Controls.Add(BtnBuscar);
+            Controls.Add(txtBuscar);
             Controls.Add(label7);
             Controls.Add(dataGridView1);
             Controls.Add(btnCancelar);
@@ -86,5 +110,7 @@
         private Button btnCancelar;
         private DataGridView dataGridView1;
         private Label label7;
+        private TextBox txtBuscar;
+        private Button BtnBuscar;
     }
 }

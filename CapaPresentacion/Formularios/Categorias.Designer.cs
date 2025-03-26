@@ -36,6 +36,9 @@
             dataGridView1 = new DataGridView();
             btnEliminar = new Button();
             btnCancelar = new Button();
+            label7 = new Label();
+            txtBuscar = new TextBox();
+            BtnBuscar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -72,7 +75,7 @@
             btnGuardar.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
             btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(329, 124);
+            btnGuardar.Location = new Point(537, 166);
             btnGuardar.Margin = new Padding(3, 2, 3, 2);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(97, 41);
@@ -86,11 +89,11 @@
             // 
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(15, 111);
+            dataGridView1.Location = new Point(12, 152);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(292, 171);
+            dataGridView1.Size = new Size(498, 171);
             dataGridView1.TabIndex = 21;
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
@@ -100,7 +103,7 @@
             btnEliminar.Font = new Font("Microsoft Sans Serif", 8.25F);
             btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
             btnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEliminar.Location = new Point(329, 169);
+            btnEliminar.Location = new Point(537, 211);
             btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(97, 43);
@@ -115,7 +118,7 @@
             btnCancelar.Font = new Font("Microsoft Sans Serif", 8.25F);
             btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
             btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancelar.Location = new Point(329, 219);
+            btnCancelar.Location = new Point(537, 261);
             btnCancelar.Margin = new Padding(3, 2, 3, 2);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(97, 43);
@@ -125,11 +128,44 @@
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Arial Narrow", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(12, 118);
+            label7.Name = "label7";
+            label7.Size = new Size(159, 24);
+            label7.TabIndex = 41;
+            label7.Text = "Lista de Categorias";
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(173, 121);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.Size = new Size(223, 26);
+            txtBuscar.TabIndex = 44;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
+            // 
+            // BtnBuscar
+            // 
+            BtnBuscar.Font = new Font("Arial", 9.75F);
+            BtnBuscar.Location = new Point(402, 121);
+            BtnBuscar.Margin = new Padding(3, 2, 3, 2);
+            BtnBuscar.Name = "BtnBuscar";
+            BtnBuscar.Size = new Size(108, 28);
+            BtnBuscar.TabIndex = 45;
+            BtnBuscar.Text = "Buscar";
+            BtnBuscar.UseVisualStyleBackColor = true;
+            BtnBuscar.Click += BtnBuscar_Click;
+            // 
             // Categorias
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(438, 293);
+            ClientSize = new Size(646, 333);
+            Controls.Add(BtnBuscar);
+            Controls.Add(txtBuscar);
+            Controls.Add(label7);
             Controls.Add(btnCancelar);
             Controls.Add(btnEliminar);
             Controls.Add(dataGridView1);
@@ -159,5 +195,8 @@
         private DataGridView dataGridView1;
         private Button btnEliminar;
         private Button btnCancelar;
+        private Label label7;
+        private TextBox txtBuscar;
+        private Button BtnBuscar;
     }
 }

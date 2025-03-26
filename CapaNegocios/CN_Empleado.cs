@@ -16,5 +16,10 @@ namespace CapaNegocios
         {
             return objetoCD.MostrarEmpleados();
         }
+
+        public DataTable BuscarEmpleado(string valor) 
+        {
+            return objetoCD.BuscarEmpleado(valor);
+        }
     }
 }

@@ -60,6 +60,24 @@ namespace CapaDatos
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();
         }
+
+        public DataTable BuscarProveedor(string valor)
+        {
+            DataTable res = new DataTable();
+            comando.Connection = conexion.AbrirConexion();
+
+            comando.CommandText = "Select * From Proveedor Where Nombre LIKE '%' + @valor + '%'";
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@valor", valor);
+
+            SqlDataReader leer = comando.ExecuteReader();
+            res.Load(leer);
+
+            conexion.CerrarConexion();
+
+            return res;
+
+        }
     }
 
 }

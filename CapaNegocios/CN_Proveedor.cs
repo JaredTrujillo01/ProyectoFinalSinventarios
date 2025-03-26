@@ -32,5 +32,10 @@ namespace CapaNegocios
         {
             objetoCD.EliminarProveedor(id);
         }
+
+        public DataTable BuscarProveedor(string valor)
+        {
+            return objetoCD.BuscarProveedor(valor);
+        }
     }
 }

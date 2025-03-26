@@ -140,5 +140,22 @@ namespace CapaPresentacion.Formularios
         {
             mostrarClientes();
         }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text.Trim() != "")
+            {
+                dataGridView1.DataSource = objetoCN.Buscarclien(txtBuscar.Text);
+            }
+            else
+            {
+                MessageBox.Show("Ingrese el DNI del cliente que desea buscar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = objetoCN.Buscarclien(txtBuscar.Text);
+        }
     }
 }
