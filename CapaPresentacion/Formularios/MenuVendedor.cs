@@ -37,5 +37,12 @@ namespace CapaPresentacion.Formularios
             devoluciones.Show();
             this.Hide();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            InicioSesion salir = new InicioSesion();
+            salir.Show();
+            this.Hide();
+        }
     }
 }

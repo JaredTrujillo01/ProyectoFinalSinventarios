@@ -45,5 +45,20 @@ namespace CapaDatos
             comando.ExecuteNonQuery();
             conexion.CerrarConexion();
         }
+
+        public DataTable BuscarCategoria(string valor)
+        {
+            DataTable dt = new DataTable();
+            comando.Connection = conexion.AbrirConexion();
+
+            comando.CommandText = "Select * from Categorias Where Nombre LIKE '%' + @valor + '%'";
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@valor", valor);
+            SqlDataReader leer = comando.ExecuteReader();
+            dt.Load(leer);
+
+            conexion.CerrarConexion();
+            return dt;
+        }
     }
 }

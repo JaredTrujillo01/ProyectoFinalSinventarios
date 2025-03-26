@@ -35,6 +35,7 @@
             btnDevoluciones = new Button();
             groupBox2 = new GroupBox();
             btnProductos = new Button();
+            btnCancelar = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -44,9 +45,11 @@
             groupBox1.Controls.Add(btnVentas);
             groupBox1.Controls.Add(btnClientes);
             groupBox1.Controls.Add(btnDevoluciones);
-            groupBox1.Location = new Point(12, 46);
+            groupBox1.Location = new Point(14, 61);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(692, 126);
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(791, 168);
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "ACCIONES";
@@ -56,9 +59,10 @@
             btnVentas.Font = new Font("Segoe UI", 8.25F);
             btnVentas.Image = (Image)resources.GetObject("btnVentas.Image");
             btnVentas.ImageAlign = ContentAlignment.MiddleLeft;
-            btnVentas.Location = new Point(124, 22);
+            btnVentas.Location = new Point(142, 29);
+            btnVentas.Margin = new Padding(3, 4, 3, 4);
             btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(148, 78);
+            btnVentas.Size = new Size(169, 104);
             btnVentas.TabIndex = 0;
             btnVentas.Text = "VENTAS";
             btnVentas.TextAlign = ContentAlignment.MiddleRight;
@@ -70,9 +74,10 @@
             btnClientes.Font = new Font("Segoe UI", 8.25F);
             btnClientes.Image = (Image)resources.GetObject("btnClientes.Image");
             btnClientes.ImageAlign = ContentAlignment.MiddleLeft;
-            btnClientes.Location = new Point(278, 22);
+            btnClientes.Location = new Point(318, 29);
+            btnClientes.Margin = new Padding(3, 4, 3, 4);
             btnClientes.Name = "btnClientes";
-            btnClientes.Size = new Size(148, 78);
+            btnClientes.Size = new Size(169, 104);
             btnClientes.TabIndex = 1;
             btnClientes.Text = "CLIENTES";
             btnClientes.TextAlign = ContentAlignment.MiddleRight;
@@ -84,9 +89,10 @@
             btnDevoluciones.Font = new Font("Segoe UI", 6.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnDevoluciones.Image = (Image)resources.GetObject("btnDevoluciones.Image");
             btnDevoluciones.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDevoluciones.Location = new Point(432, 22);
+            btnDevoluciones.Location = new Point(494, 29);
+            btnDevoluciones.Margin = new Padding(3, 4, 3, 4);
             btnDevoluciones.Name = "btnDevoluciones";
-            btnDevoluciones.Size = new Size(148, 78);
+            btnDevoluciones.Size = new Size(169, 104);
             btnDevoluciones.TabIndex = 2;
             btnDevoluciones.Text = "DEVOLUCIONES";
             btnDevoluciones.TextAlign = ContentAlignment.MiddleRight;
@@ -96,9 +102,11 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(btnProductos);
-            groupBox2.Location = new Point(12, 182);
+            groupBox2.Location = new Point(14, 243);
+            groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(692, 126);
+            groupBox2.Padding = new Padding(3, 4, 3, 4);
+            groupBox2.Size = new Size(791, 168);
             groupBox2.TabIndex = 9;
             groupBox2.TabStop = false;
             groupBox2.Text = "CONSULTAR";
@@ -108,21 +116,39 @@
             btnProductos.Font = new Font("Segoe UI", 8.25F);
             btnProductos.Image = (Image)resources.GetObject("btnProductos.Image");
             btnProductos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProductos.Location = new Point(297, 22);
+            btnProductos.Location = new Point(339, 29);
+            btnProductos.Margin = new Padding(3, 4, 3, 4);
             btnProductos.Name = "btnProductos";
-            btnProductos.Size = new Size(148, 78);
+            btnProductos.Size = new Size(169, 104);
             btnProductos.TabIndex = 0;
             btnProductos.Text = "PRODUCTOS";
             btnProductos.TextAlign = ContentAlignment.MiddleRight;
             btnProductos.UseVisualStyleBackColor = true;
             // 
+            // btnCancelar
+            // 
+            btnCancelar.Font = new Font("Microsoft Sans Serif", 8.25F);
+            btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
+            btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCancelar.Location = new Point(661, 12);
+            btnCancelar.Margin = new Padding(3, 2, 3, 2);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(145, 43);
+            btnCancelar.TabIndex = 26;
+            btnCancelar.Text = "Cerrar Sesión";
+            btnCancelar.TextAlign = ContentAlignment.MiddleRight;
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
             // MenuVendedor
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(716, 320);
+            ClientSize = new Size(818, 427);
+            Controls.Add(btnCancelar);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "MenuVendedor";
@@ -141,5 +167,6 @@
         private Button btnDevoluciones;
         private GroupBox groupBox2;
         private Button btnProductos;
+        private Button btnCancelar;
     }
 }
