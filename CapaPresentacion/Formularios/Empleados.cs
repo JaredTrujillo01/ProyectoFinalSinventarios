@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocios;
 
 namespace CapaPresentacion.Formularios
 {
@@ -22,6 +23,17 @@ namespace CapaPresentacion.Formularios
             MenuAdmin menuA = new MenuAdmin();
             menuA.Show();
             this.Hide();
+        }
+
+        private void Empleados_Load(object sender, EventArgs e)
+        {
+            mostrarEmpleados();
+        }
+
+        public void mostrarEmpleados()
+        {
+            CN_Empleados objeto = new CN_Empleados();
+            dataGridView1.DataSource = objeto.MostrarEmpleados();
         }
     }
 }
