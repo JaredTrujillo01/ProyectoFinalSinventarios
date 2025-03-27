@@ -14,6 +14,7 @@ namespace CapaPresentacion.Formularios
     public partial class Empleados : Form
     {
         CN_Empleados CNObjeto = new CN_Empleados();
+        int idempleados = 0;
         public Empleados()
         {
             InitializeComponent();
@@ -52,6 +53,28 @@ namespace CapaPresentacion.Formularios
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             dataGridView1.DataSource = CNObjeto.BuscarEmpleado(txtBuscar.Text);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (idempleados != 0)
+            {
+                CNObjeto.eliminarEmpleado(idempleados);
+                MessageBox.Show("Empleado eliminado con exito");
+                mostrarEmpleados();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un empleado para eliminar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                idempleados = Convert.ToInt32(dataGridView1.CurrentRow.Cells["EmpleadoID"].Value.ToString());
+            }
         }
     }
 }

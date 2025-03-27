@@ -61,6 +61,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(972, 374);
             dataGridView1.TabIndex = 25;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // label7
             // 
@@ -104,6 +105,7 @@
             btnEliminar.Text = "Eliminar ";
             btnEliminar.TextAlign = ContentAlignment.MiddleRight;
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // Empleados
             // 

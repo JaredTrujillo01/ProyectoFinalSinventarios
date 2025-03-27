@@ -65,7 +65,7 @@ namespace CapaDatos
             }
             return tabla;
         }
-
+       
         public DataTable BuscarEmpleado(string valor)
         {
             DataTable tabla = new DataTable();
@@ -80,6 +80,24 @@ namespace CapaDatos
 
             conexion.CerrarConexion();
             return tabla;
+        }
+
+        public void EliminarEmpleado(int id)
+        {
+            try
+            {
+                comando.Connection = conexion.AbrirConexion();
+                comando.CommandText = "DELETE FROM Empleados WHERE EmpleadoID = @id";
+                comando.Parameters.Clear();
+                comando.Parameters.AddWithValue("@id", id);
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                conexion.CerrarConexion();
+                throw new Exception("Error al eliminar empleado: " + ex.Message);
+            }
         }
     }
 }

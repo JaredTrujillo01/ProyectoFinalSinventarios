@@ -21,5 +21,10 @@ namespace CapaNegocios
         {
             return objetoCD.BuscarEmpleado(valor);
         }
+
+        public void eliminarEmpleado(int id)
+        {
+            objetoCD.EliminarEmpleado(id);
+        }
     }
 }
