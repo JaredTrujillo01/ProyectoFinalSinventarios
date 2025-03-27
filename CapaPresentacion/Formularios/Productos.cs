@@ -24,12 +24,31 @@ namespace CapaPresentacion.Formularios
         private void Productos_Load(object sender, EventArgs e)
         {
             mostrarProductos();
+            CargarCategorias();
+            CargarProveedores();
         }
 
         private void mostrarProductos()
         {
             CN_Producto objeto = new CN_Producto();
             dataGridView1.DataSource = objeto.Mostrar();
+        }
+
+        private void CargarCategorias()
+        {
+            CN_Producto objeto = new CN_Producto();
+            CBCate.DataSource = objeto.ObtenerCategorias();
+            CBCate.DisplayMember = "Nombre";  
+            CBCate.ValueMember = "IdCategoria"; 
+            CBCate.SelectedIndex = -1;
+        }
+        private void CargarProveedores()
+        {
+            CN_Producto objeto = new CN_Producto();
+            CBProvee.DataSource = objeto.ObtenerProveedores();
+            CBProvee.DisplayMember = "Nombre";
+            CBProvee.ValueMember = "IdProveedor";
+            CBProvee.SelectedIndex = -1; 
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -41,8 +60,8 @@ namespace CapaPresentacion.Formularios
                     txtDesc.Text,
                     Convert.ToDecimal(txtPrecio.Text),
                     Convert.ToInt32(txtStock.Text),
-                    Convert.ToInt32(CBCate.Text),
-                    Convert.ToInt32(CBProvee.Text)
+                    Convert.ToInt32(CBProvee.SelectedValue),
+                    Convert.ToInt32(CBCate.SelectedValue)
                 );
 
                 MessageBox.Show("Producto insertado correctamente");
@@ -75,8 +94,8 @@ namespace CapaPresentacion.Formularios
                     txtDesc.Text,
                     Convert.ToDecimal(txtPrecio.Text),
                     Convert.ToInt32(txtStock.Text),
-                    Convert.ToInt32(CBCate.Text),
-                    Convert.ToInt32(CBProvee.Text)
+                    Convert.ToInt32(CBProvee.SelectedValue),
+                    Convert.ToInt32(CBCate.SelectedValue)
                 );
 
                 MessageBox.Show("Producto actualizado correctamente");
@@ -119,8 +138,29 @@ namespace CapaPresentacion.Formularios
                 txtDesc.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                 txtPrecio.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                 txtStock.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                CBCate.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-                CBProvee.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+                int idProveedor = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[5].Value);
+                int idCategoria = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[6].Value);
+
+                // Forzamos la actualización de los ComboBox antes de asignar SelectedValue
+                CargarCategorias();
+                CargarProveedores();
+
+                // Esperamos a que los datos se carguen completamente
+                CBCate.SelectedIndex = -1;
+                CBProvee.SelectedIndex = -1;
+                CBCate.SelectedValue = idCategoria;
+                CBProvee.SelectedValue = idProveedor;
+
+                // Si el valor no se asigna correctamente, mostramos una alerta
+                if (CBCate.SelectedValue == null || (int)CBCate.SelectedValue != idCategoria)
+                {
+                    MessageBox.Show($"No se encontró la categoría con ID {idCategoria}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                if (CBProvee.SelectedValue == null || (int)CBProvee.SelectedValue != idProveedor)
+                {
+                    MessageBox.Show($"No se encontró el proveedor con ID {idProveedor}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 

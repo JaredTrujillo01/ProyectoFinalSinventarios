@@ -87,6 +87,29 @@ namespace CapaDatos
             conexion.CerrarConexion();
             return tablaResultado;
         }
+        public DataTable ObtenerProveedores()
+        {
+            DataTable tablaProveedores = new DataTable();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "SELECT IdProveedor, Nombre FROM Proveedor"; 
 
+            SqlDataReader leer = comando.ExecuteReader();
+            tablaProveedores.Load(leer);
+
+            conexion.CerrarConexion();
+            return tablaProveedores;
+        }
+        public DataTable ObtenerCategorias()
+        {
+            DataTable tablaCategorias = new DataTable();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "SELECT IdCategoria, Nombre FROM Categoria"; 
+
+            SqlDataReader leer = comando.ExecuteReader();
+            tablaCategorias.Load(leer);
+
+            conexion.CerrarConexion();
+            return tablaCategorias;
+        }
     }
 }

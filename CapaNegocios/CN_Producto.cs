@@ -20,7 +20,7 @@ namespace CapaNegocios
         }
         public void InsertarProducto(string nombre, string descripcion, decimal precioUnitario, int stock, int idProveedor, int idCategoria)
         {
-            objetoCD.Insertar(nombre, descripcion, precioUnitario, stock, idCategoria, idProveedor);
+            objetoCD.Insertar(nombre, descripcion, precioUnitario, stock, idProveedor, idCategoria);
         }
 
         public void ActualizarProducto(int id, string nombre, string descripcion, decimal precio, int stock, int idProveedor, int idCategoria)
@@ -36,6 +36,14 @@ namespace CapaNegocios
         public DataTable BuscarProducto(string valor)
         {
            return objetoCD.BuscarProducto(valor);
+        }
+        public DataTable ObtenerProveedores()
+        {
+            return objetoCD.ObtenerProveedores();
+        }
+        public DataTable ObtenerCategorias()
+        {
+            return objetoCD.ObtenerCategorias();
         }
     }
 }

@@ -54,7 +54,7 @@
             label2.Location = new Point(14, 9);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(309, 32);
+            label2.Size = new Size(262, 27);
             label2.TabIndex = 5;
             label2.Text = "Gestion de Proveedores";
             // 
@@ -62,10 +62,10 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 10.8F);
-            label3.Location = new Point(26, 57);
+            label3.Location = new Point(36, 59);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(78, 21);
+            label3.Size = new Size(64, 17);
             label3.TabIndex = 6;
             label3.Text = "Nombre:";
             // 
@@ -73,10 +73,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 10.8F);
-            label1.Location = new Point(14, 146);
+            label1.Location = new Point(26, 92);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(90, 21);
+            label1.Size = new Size(74, 17);
             label1.TabIndex = 7;
             label1.Text = "Direccion:";
             // 
@@ -84,10 +84,10 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 10.8F);
-            label4.Location = new Point(20, 98);
+            label4.Location = new Point(384, 57);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(84, 21);
+            label4.Size = new Size(66, 17);
             label4.TabIndex = 8;
             label4.Text = "Telefono:";
             // 
@@ -96,23 +96,24 @@
             txtNombre.Location = new Point(112, 54);
             txtNombre.Margin = new Padding(4, 3, 4, 3);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(358, 28);
+            txtNombre.Size = new Size(264, 24);
             txtNombre.TabIndex = 9;
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(112, 95);
+            txtTelefono.Location = new Point(449, 54);
             txtTelefono.Margin = new Padding(4, 3, 4, 3);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(358, 28);
+            txtTelefono.Size = new Size(264, 24);
             txtTelefono.TabIndex = 10;
             // 
             // txtDireccion
             // 
-            txtDireccion.Location = new Point(112, 139);
+            txtDireccion.Location = new Point(112, 92);
             txtDireccion.Margin = new Padding(4, 3, 4, 3);
+            txtDireccion.Multiline = true;
             txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(358, 28);
+            txtDireccion.Size = new Size(601, 66);
             txtDireccion.TabIndex = 11;
             // 
             // label5
@@ -122,7 +123,7 @@
             label5.Location = new Point(15, 203);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(180, 21);
+            label5.Size = new Size(146, 17);
             label5.TabIndex = 12;
             label5.Text = "Lista de Proveedores";
             // 
@@ -203,7 +204,7 @@
             txtBuscar.Location = new Point(248, 199);
             txtBuscar.Margin = new Padding(4, 3, 4, 3);
             txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(348, 28);
+            txtBuscar.Size = new Size(348, 24);
             txtBuscar.TabIndex = 25;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
@@ -221,7 +222,7 @@
             // 
             // Proveedores
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(8F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1120, 490);
             Controls.Add(btnBuscar);

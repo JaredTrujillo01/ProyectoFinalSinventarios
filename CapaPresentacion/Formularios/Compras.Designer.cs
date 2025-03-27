@@ -31,22 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Compras));
             label2 = new Label();
             label8 = new Label();
-            comboBox1 = new ComboBox();
+            cmbProveedores = new ComboBox();
             label1 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            dtpFechaCompra = new DateTimePicker();
             dataGridView1 = new DataGridView();
-            Productos = new DataGridViewComboBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
-            PrecioCompra = new DataGridViewTextBoxColumn();
-            Subtotal = new DataGridViewTextBoxColumn();
             label3 = new Label();
-            textBox1 = new TextBox();
-            button2 = new Button();
-            button1 = new Button();
-            button3 = new Button();
+            txtTotal = new TextBox();
+            btnRealizarCompra = new Button();
             btnCancelar = new Button();
-            btnEliminar = new Button();
-            btnGuardar = new Button();
+            btnEliminarP = new Button();
+            btnAgregarP = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -70,14 +64,15 @@
             label8.TabIndex = 15;
             label8.Text = "Proveedor:";
             // 
-            // comboBox1
+            // cmbProveedores
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(111, 55);
-            comboBox1.Margin = new Padding(3, 2, 3, 2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(229, 23);
-            comboBox1.TabIndex = 16;
+            cmbProveedores.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbProveedores.FormattingEnabled = true;
+            cmbProveedores.Location = new Point(111, 55);
+            cmbProveedores.Margin = new Padding(3, 2, 3, 2);
+            cmbProveedores.Name = "cmbProveedores";
+            cmbProveedores.Size = new Size(229, 23);
+            cmbProveedores.TabIndex = 16;
             // 
             // label1
             // 
@@ -89,52 +84,23 @@
             label1.TabIndex = 17;
             label1.Text = "Fecha:";
             // 
-            // dateTimePicker1
+            // dtpFechaCompra
             // 
-            dateTimePicker1.Location = new Point(411, 56);
-            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(274, 23);
-            dateTimePicker1.TabIndex = 18;
+            dtpFechaCompra.Location = new Point(411, 56);
+            dtpFechaCompra.Margin = new Padding(3, 2, 3, 2);
+            dtpFechaCompra.Name = "dtpFechaCompra";
+            dtpFechaCompra.Size = new Size(274, 23);
+            dtpFechaCompra.TabIndex = 18;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Productos, Cantidad, PrecioCompra, Subtotal });
             dataGridView1.Location = new Point(10, 90);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(674, 141);
             dataGridView1.TabIndex = 19;
-            // 
-            // Productos
-            // 
-            Productos.HeaderText = "Producto";
-            Productos.MinimumWidth = 6;
-            Productos.Name = "Productos";
-            Productos.Width = 125;
-            // 
-            // Cantidad
-            // 
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.MinimumWidth = 6;
-            Cantidad.Name = "Cantidad";
-            Cantidad.Width = 125;
-            // 
-            // PrecioCompra
-            // 
-            PrecioCompra.HeaderText = "Precio";
-            PrecioCompra.MinimumWidth = 6;
-            PrecioCompra.Name = "PrecioCompra";
-            PrecioCompra.Width = 125;
-            // 
-            // Subtotal
-            // 
-            Subtotal.HeaderText = "Subtotal";
-            Subtotal.MinimumWidth = 6;
-            Subtotal.Name = "Subtotal";
-            Subtotal.Width = 125;
             // 
             // label3
             // 
@@ -146,89 +112,73 @@
             label3.TabIndex = 20;
             label3.Text = "Total:";
             // 
-            // textBox1
+            // txtTotal
             // 
-            textBox1.Location = new Point(67, 242);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(134, 23);
-            textBox1.TabIndex = 21;
+            txtTotal.Location = new Point(67, 242);
+            txtTotal.Margin = new Padding(3, 2, 3, 2);
+            txtTotal.Name = "txtTotal";
+            txtTotal.Size = new Size(134, 23);
+            txtTotal.TabIndex = 21;
             // 
-            // button2
+            // btnRealizarCompra
             // 
-            button2.Font = new Font("Arial Black", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(499, 236);
-            button2.Margin = new Padding(3, 2, 3, 2);
-            button2.Name = "button2";
-            button2.Size = new Size(186, 30);
-            button2.TabIndex = 22;
-            button2.Text = "Agregar Producto";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Font = new Font("Arial Black", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(308, 236);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(186, 30);
-            button1.TabIndex = 23;
-            button1.Text = "Eliminar Producto";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Font = new Font("Arial Black", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(143, 297);
-            button3.Margin = new Padding(3, 2, 3, 2);
-            button3.Name = "button3";
-            button3.Size = new Size(186, 30);
-            button3.TabIndex = 24;
-            button3.Text = "Realizar Compra";
-            button3.UseVisualStyleBackColor = true;
+            btnRealizarCompra.Font = new Font("Arial", 8.25F);
+            btnRealizarCompra.Image = (Image)resources.GetObject("btnRealizarCompra.Image");
+            btnRealizarCompra.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRealizarCompra.Location = new Point(13, 285);
+            btnRealizarCompra.Margin = new Padding(3, 2, 3, 2);
+            btnRealizarCompra.Name = "btnRealizarCompra";
+            btnRealizarCompra.Size = new Size(188, 43);
+            btnRealizarCompra.TabIndex = 42;
+            btnRealizarCompra.Text = "Realizar Compra";
+            btnRealizarCompra.TextAlign = ContentAlignment.MiddleRight;
+            btnRealizarCompra.UseVisualStyleBackColor = true;
+            btnRealizarCompra.Click += btnRealizarCompra_Click;
             // 
             // btnCancelar
             // 
             btnCancelar.Font = new Font("Microsoft Sans Serif", 8.25F);
             btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
             btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancelar.Location = new Point(588, 283);
+            btnCancelar.Location = new Point(562, 272);
             btnCancelar.Margin = new Padding(3, 2, 3, 2);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(97, 43);
-            btnCancelar.TabIndex = 41;
+            btnCancelar.Size = new Size(97, 46);
+            btnCancelar.TabIndex = 45;
             btnCancelar.Text = "Cancelar";
             btnCancelar.TextAlign = ContentAlignment.MiddleRight;
             btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click_1;
+            btnCancelar.Click += btnCancelar_Click_2;
             // 
-            // btnEliminar
+            // btnEliminarP
             // 
-            btnEliminar.Font = new Font("Microsoft Sans Serif", 8.25F);
-            btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
-            btnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEliminar.Location = new Point(485, 284);
-            btnEliminar.Margin = new Padding(3, 2, 3, 2);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(97, 43);
-            btnEliminar.TabIndex = 40;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.TextAlign = ContentAlignment.MiddleRight;
-            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminarP.Font = new Font("Arial", 8.25F);
+            btnEliminarP.Image = (Image)resources.GetObject("btnEliminarP.Image");
+            btnEliminarP.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEliminarP.Location = new Point(448, 273);
+            btnEliminarP.Margin = new Padding(3, 2, 3, 2);
+            btnEliminarP.Name = "btnEliminarP";
+            btnEliminarP.Size = new Size(97, 46);
+            btnEliminarP.TabIndex = 44;
+            btnEliminarP.Text = "Eliminar P";
+            btnEliminarP.TextAlign = ContentAlignment.MiddleRight;
+            btnEliminarP.UseVisualStyleBackColor = true;
+            btnEliminarP.Click += btnEliminarP_Click;
             // 
-            // btnGuardar
+            // btnAgregarP
             // 
-            btnGuardar.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
-            btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(382, 284);
-            btnGuardar.Margin = new Padding(3, 2, 3, 2);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(97, 41);
-            btnGuardar.TabIndex = 39;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.TextAlign = ContentAlignment.MiddleRight;
-            btnGuardar.UseVisualStyleBackColor = true;
+            btnAgregarP.Font = new Font("Arial", 8.25F);
+            btnAgregarP.Image = (Image)resources.GetObject("btnAgregarP.Image");
+            btnAgregarP.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAgregarP.Location = new Point(331, 273);
+            btnAgregarP.Margin = new Padding(3, 2, 3, 2);
+            btnAgregarP.Name = "btnAgregarP";
+            btnAgregarP.Size = new Size(97, 46);
+            btnAgregarP.TabIndex = 43;
+            btnAgregarP.Text = "Agregar P";
+            btnAgregarP.TextAlign = ContentAlignment.MiddleRight;
+            btnAgregarP.UseVisualStyleBackColor = true;
+            btnAgregarP.Click += btnAgregarP_Click;
             // 
             // Compras
             // 
@@ -236,17 +186,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 343);
             Controls.Add(btnCancelar);
-            Controls.Add(btnEliminar);
-            Controls.Add(btnGuardar);
-            Controls.Add(button3);
-            Controls.Add(button1);
-            Controls.Add(button2);
-            Controls.Add(textBox1);
+            Controls.Add(btnEliminarP);
+            Controls.Add(btnAgregarP);
+            Controls.Add(btnRealizarCompra);
+            Controls.Add(txtTotal);
             Controls.Add(label3);
             Controls.Add(dataGridView1);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(dtpFechaCompra);
             Controls.Add(label1);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbProveedores);
             Controls.Add(label8);
             Controls.Add(label2);
             Margin = new Padding(3, 2, 3, 2);
@@ -255,6 +203,7 @@
             Name = "Compras";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Compras";
+            Load += Compras_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -264,21 +213,15 @@
 
         private Label label2;
         private Label label8;
-        private ComboBox comboBox1;
+        private ComboBox cmbProveedores;
         private Label label1;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpFechaCompra;
         private DataGridView dataGridView1;
-        private DataGridViewComboBoxColumn Productos;
-        private DataGridViewTextBoxColumn Cantidad;
-        private DataGridViewTextBoxColumn PrecioCompra;
-        private DataGridViewTextBoxColumn Subtotal;
         private Label label3;
-        private TextBox textBox1;
-        private Button button2;
-        private Button button1;
-        private Button button3;
+        private TextBox txtTotal;
+        private Button btnRealizarCompra;
         private Button btnCancelar;
-        private Button btnEliminar;
-        private Button btnGuardar;
+        private Button btnEliminarP;
+        private Button btnAgregarP;
     }
 }

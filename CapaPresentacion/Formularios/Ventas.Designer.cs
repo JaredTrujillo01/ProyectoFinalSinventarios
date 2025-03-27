@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas));
             button3 = new Button();
-            button1 = new Button();
-            button2 = new Button();
+            btnEliminarP = new Button();
+            btnAgregarP = new Button();
             textBox1 = new TextBox();
             label3 = new Label();
             dataGridView1 = new DataGridView();
@@ -50,48 +50,61 @@
             // 
             // button3
             // 
-            button3.Font = new Font("Arial Black", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(293, 379);
+            button3.Font = new Font("Arial", 8.25F);
+            button3.Image = (Image)resources.GetObject("button3.Image");
+            button3.ImageAlign = ContentAlignment.MiddleLeft;
+            button3.Location = new Point(16, 284);
+            button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(213, 40);
+            button3.Size = new Size(188, 43);
             button3.TabIndex = 35;
             button3.Text = "Realizar Venta";
+            button3.TextAlign = ContentAlignment.MiddleRight;
             button3.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnEliminarP
             // 
-            button1.Font = new Font("Arial Black", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(355, 312);
-            button1.Name = "button1";
-            button1.Size = new Size(213, 40);
-            button1.TabIndex = 34;
-            button1.Text = "Eliminar Producto";
-            button1.UseVisualStyleBackColor = true;
+            btnEliminarP.Font = new Font("Arial", 8.25F);
+            btnEliminarP.Image = (Image)resources.GetObject("btnEliminarP.Image");
+            btnEliminarP.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEliminarP.Location = new Point(476, 256);
+            btnEliminarP.Margin = new Padding(3, 2, 3, 2);
+            btnEliminarP.Name = "btnEliminarP";
+            btnEliminarP.Size = new Size(97, 46);
+            btnEliminarP.TabIndex = 34;
+            btnEliminarP.Text = "Eliminar P";
+            btnEliminarP.TextAlign = ContentAlignment.MiddleRight;
+            btnEliminarP.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnAgregarP
             // 
-            button2.Font = new Font("Arial Black", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(573, 313);
-            button2.Name = "button2";
-            button2.Size = new Size(213, 40);
-            button2.TabIndex = 33;
-            button2.Text = "Agregar Producto";
-            button2.UseVisualStyleBackColor = true;
+            btnAgregarP.Font = new Font("Arial", 8.25F);
+            btnAgregarP.Image = (Image)resources.GetObject("btnAgregarP.Image");
+            btnAgregarP.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAgregarP.Location = new Point(359, 256);
+            btnAgregarP.Margin = new Padding(3, 2, 3, 2);
+            btnAgregarP.Name = "btnAgregarP";
+            btnAgregarP.Size = new Size(97, 46);
+            btnAgregarP.TabIndex = 33;
+            btnAgregarP.Text = "Agregar P";
+            btnAgregarP.TextAlign = ContentAlignment.MiddleRight;
+            btnAgregarP.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(80, 321);
+            textBox1.Location = new Point(70, 241);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(153, 27);
+            textBox1.Size = new Size(134, 23);
             textBox1.TabIndex = 32;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(15, 323);
+            label3.Location = new Point(13, 242);
             label3.Name = "label3";
-            label3.Size = new Size(59, 21);
+            label3.Size = new Size(47, 18);
             label3.TabIndex = 31;
             label3.Text = "Total:";
             // 
@@ -99,10 +112,11 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Productos, Cantidad, PrecioCompra, Subtotal });
-            dataGridView1.Location = new Point(15, 117);
+            dataGridView1.Location = new Point(13, 88);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(770, 188);
+            dataGridView1.Size = new Size(674, 141);
             dataGridView1.TabIndex = 30;
             // 
             // Productos
@@ -135,36 +149,38 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(473, 73);
+            dateTimePicker1.Location = new Point(414, 55);
+            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(313, 27);
+            dateTimePicker1.Size = new Size(274, 23);
             dateTimePicker1.TabIndex = 29;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(397, 73);
+            label1.Location = new Point(347, 55);
             label1.Name = "label1";
-            label1.Size = new Size(70, 21);
+            label1.Size = new Size(55, 18);
             label1.TabIndex = 28;
             label1.Text = "Fecha:";
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(101, 71);
+            comboBox1.Location = new Point(88, 53);
+            comboBox1.Margin = new Padding(3, 2, 3, 2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(291, 28);
+            comboBox1.Size = new Size(255, 23);
             comboBox1.TabIndex = 27;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(15, 73);
+            label8.Location = new Point(13, 55);
             label8.Name = "label8";
-            label8.Size = new Size(79, 21);
+            label8.Size = new Size(63, 18);
             label8.TabIndex = 26;
             label8.Text = "Cliente:";
             // 
@@ -172,9 +188,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(306, 19);
+            label2.Location = new Point(268, 14);
             label2.Name = "label2";
-            label2.Size = new Size(171, 32);
+            label2.Size = new Size(146, 27);
             label2.TabIndex = 25;
             label2.Text = "Nueva Venta";
             // 
@@ -183,9 +199,10 @@
             btnCancelar.Font = new Font("Microsoft Sans Serif", 8.25F);
             btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
             btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancelar.Location = new Point(657, 372);
+            btnCancelar.Location = new Point(590, 255);
+            btnCancelar.Margin = new Padding(3, 2, 3, 2);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(111, 57);
+            btnCancelar.Size = new Size(97, 46);
             btnCancelar.TabIndex = 39;
             btnCancelar.Text = "Cancelar";
             btnCancelar.TextAlign = ContentAlignment.MiddleRight;
@@ -194,13 +211,13 @@
             // 
             // Ventas
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 451);
+            ClientSize = new Size(700, 338);
             Controls.Add(btnCancelar);
             Controls.Add(button3);
-            Controls.Add(button1);
-            Controls.Add(button2);
+            Controls.Add(btnEliminarP);
+            Controls.Add(btnAgregarP);
             Controls.Add(textBox1);
             Controls.Add(label3);
             Controls.Add(dataGridView1);
@@ -209,6 +226,7 @@
             Controls.Add(comboBox1);
             Controls.Add(label8);
             Controls.Add(label2);
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Ventas";
@@ -222,8 +240,8 @@
         #endregion
 
         private Button button3;
-        private Button button1;
-        private Button button2;
+        private Button btnEliminarP;
+        private Button btnAgregarP;
         private TextBox textBox1;
         private Label label3;
         private DataGridView dataGridView1;

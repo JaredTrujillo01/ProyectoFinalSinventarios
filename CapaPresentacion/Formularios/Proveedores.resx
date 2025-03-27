@@ -121,7 +121,7 @@
   <data name="btnGuardar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAHdElNRQfpAxgWJwzkSsTGAAAA
+        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAAHdElNRQfpAxgWJwzkSsTGAAAA
         GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAA9pJREFUWEfFl81PU0EUxRujGONCl5qg
         qP0HNEhQEzGEP0LduHcDLtxCQT4spQImCmgUbCUFjQskcYERikFoKfJhYyohIS0pJhJR/AokJno9Z3jv
         8SjvlUKqNvmlw8ydc8/cN2/oOPg5WdNmJgfkAmd+dZuzyNvhrByIOBtCb5yekcxgrAtzznk7jp241rLH
@@ -145,7 +145,7 @@
   <data name="btnActualizar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAHdElNRQfpAxgWJwzkSsTGAAAA
+        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAHdElNRQfpAxgWJwzkSsTGAAAA
         GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAABDlJREFUWEell81rE0EYxtNGEQQFTwUF
         v6oXryLowUNtUcSDH2D9CwRFEEE8eNO26llrUdK09bu92oO2oOJRBBWLrSJaqu0msc0msdJq1fb1eWaz
         k9ntbrKpA78mzc68z7Mz78y7G6vU4p0TwAomadXgkwRfB0tu8c6UJ9By5/91YB84C66B20X4nb/xGvt4
@@ -170,7 +170,7 @@
   <data name="btnEliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAHdElNRQfpAxgWJwzkSsTGAAAA
+        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAAHdElNRQfpAxgWJwzkSsTGAAAA
         GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAA5xJREFUWEel18lvTlEYx/FXS0w7NhQL
         ElMTmk7GTgg2ImIIfwNaFkJsiNiYNiKmGDbGBWVhZwoSERGWaBeIahtiiC4khvL7npxzc96bx71v25t8
         kjs85znnvfec5963YG29i+YWuptrYmUyS7bINXkt3+W3xz7nuLZVZgttkhzvl1X57Dlb3EiGyTw5IW+E
