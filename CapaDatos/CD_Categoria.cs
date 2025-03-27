@@ -51,7 +51,7 @@ namespace CapaDatos
             DataTable dt = new DataTable();
             comando.Connection = conexion.AbrirConexion();
 
-            comando.CommandText = "Select * from Categorias Where Nombre LIKE '%' + @valor + '%'";
+            comando.CommandText = "Select * from Categoria Where Nombre LIKE '%' + @valor + '%'";
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@valor", valor);
             SqlDataReader leer = comando.ExecuteReader();
