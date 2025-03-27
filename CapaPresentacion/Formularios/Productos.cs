@@ -147,5 +147,10 @@ namespace CapaPresentacion.Formularios
         {
             dataGridView1.DataSource = objetoCN.BuscarProducto(txtBuscar.Text);
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

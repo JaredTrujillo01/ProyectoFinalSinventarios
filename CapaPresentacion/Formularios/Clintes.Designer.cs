@@ -151,9 +151,9 @@
             btnCancelar.Font = new Font("Microsoft Sans Serif", 8.25F);
             btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
             btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancelar.Location = new Point(149, 352);
+            btnCancelar.Location = new Point(144, 330);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(111, 57);
+            btnCancelar.Size = new Size(111, 58);
             btnCancelar.TabIndex = 38;
             btnCancelar.Text = "Cancelar";
             btnCancelar.TextAlign = ContentAlignment.MiddleRight;
@@ -165,9 +165,9 @@
             btnEliminar.Font = new Font("Microsoft Sans Serif", 8.25F);
             btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
             btnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEliminar.Location = new Point(149, 270);
+            btnEliminar.Location = new Point(145, 263);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(111, 57);
+            btnEliminar.Size = new Size(110, 61);
             btnEliminar.TabIndex = 37;
             btnEliminar.Text = "Eliminar";
             btnEliminar.TextAlign = ContentAlignment.MiddleRight;
@@ -179,9 +179,9 @@
             btnGuardar.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
             btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(32, 270);
+            btnGuardar.Location = new Point(29, 261);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(111, 55);
+            btnGuardar.Size = new Size(106, 63);
             btnGuardar.TabIndex = 36;
             btnGuardar.Text = "Guardar";
             btnGuardar.TextAlign = ContentAlignment.MiddleRight;
@@ -190,11 +190,12 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(424, 44);
+            dataGridView1.Location = new Point(400, 51);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(631, 365);
+            dataGridView1.Size = new Size(655, 358);
             dataGridView1.TabIndex = 39;
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
@@ -202,10 +203,10 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Arial Black", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(424, 9);
+            label7.Font = new Font("Arial", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(400, 21);
             label7.Name = "label7";
-            label7.Size = new Size(225, 32);
+            label7.Size = new Size(143, 21);
             label7.TabIndex = 40;
             label7.Text = "Lista de Clientes";
             // 
@@ -214,18 +215,18 @@
             btnActualizar.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnActualizar.Image = (Image)resources.GetObject("btnActualizar.Image");
             btnActualizar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnActualizar.Location = new Point(267, 272);
+            btnActualizar.Location = new Point(265, 263);
             btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(111, 55);
+            btnActualizar.Size = new Size(113, 61);
             btnActualizar.TabIndex = 41;
-            btnActualizar.Text = "Actualizar";
+            btnActualizar.Text = "Editar";
             btnActualizar.TextAlign = ContentAlignment.MiddleRight;
             btnActualizar.UseVisualStyleBackColor = true;
             btnActualizar.Click += btnActualizar_Click;
             // 
             // txtBuscar
             // 
-            txtBuscar.Location = new Point(655, 15);
+            txtBuscar.Location = new Point(549, 19);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(281, 27);
             txtBuscar.TabIndex = 43;
@@ -234,10 +235,10 @@
             // BtnBuscar
             // 
             BtnBuscar.Font = new Font("Arial", 9.75F);
-            BtnBuscar.Location = new Point(942, 14);
+            BtnBuscar.Location = new Point(836, 15);
             BtnBuscar.Margin = new Padding(3, 2, 3, 2);
             BtnBuscar.Name = "BtnBuscar";
-            BtnBuscar.Size = new Size(108, 28);
+            BtnBuscar.Size = new Size(108, 34);
             BtnBuscar.TabIndex = 44;
             BtnBuscar.Text = "Buscar";
             BtnBuscar.UseVisualStyleBackColor = true;

@@ -121,7 +121,7 @@
   <data name="btnVentas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAAHdElNRQfpAxgVKQ0PiGeHAAAA
+        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADr0AAA69AUf7kK0AAAAHdElNRQfpAxgVKQ0PiGeHAAAA
         GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAGldJREFUeF7tWndcVWe2/TJvkpl5eZlE
         M/PSbGkae8MeG0XpVXpv0rtBVBAsMYkxahKNqU7UqIktsVcEESmCgmCjCYKCithARW5Zb32HewmWvJlE
         J+/94f791u/ce8/l3LPWXnt/+zsqHsfjeByP43H8yqirg7h4USPqL6nF5Xrislp35uGi7MxlkVNQKY4U
@@ -241,7 +241,7 @@
   <data name="btnClientes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADr4AAA6+AepCscAAAAAHdElNRQfpAxgWHgoDrexJAAAA
+        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADrwAAA68AZW8ckkAAAAHdElNRQfpAxgWHgoDrexJAAAA
         GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAC5VJREFUeF7d2QlsVNcVgOFrw+BAaUqz
         4LDZmbCVtlmAshkCCWErOGxOCA6JCVnI3gRaIFSqUKuoUaukbSJVlaJWTao2UhpVqWxopEZNWmIbg8E2
         YBvvmHEGvMxujz0eL7f/efPGTBvMlvHMhCMdPYRGvHc/zrv33PtUNOKJM21q+2mHkU83tqnnz7RdRy58
@@ -298,7 +298,7 @@
   <data name="btnDevoluciones.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADdIAAA3SAW+S/o4AAAAHdElNRQfpAxgVKQ0PiGeHAAAA
+        MAAA6mAAADqYAAAXcJy6UTwAAAAJcEhZcwAADdAAAA3QARBsPQcAAAAHdElNRQfpAxgVKQ0PiGeHAAAA
         GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAADbxJREFUeF7dWwl0VNUZHkwgUQQEK0tt
         FZAARStgQEB6BNFTWxWKUFpJqy1oQEE8pLNkJRuQKILEIBYawqJEGgtiUQrkTTaSyJKEKGETcYEkokIW
         1rAk3H7fnXmXmclEkIRJwn/Of2bmvv/+//f97+7vjaGp5KbgdKkGo2YwmK3PtAnLLLk5Iut0q+D0OJS3

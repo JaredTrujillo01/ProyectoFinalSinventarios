@@ -37,9 +37,9 @@
             btnRProveedores = new Button();
             btnRProductos = new Button();
             groupBox1 = new GroupBox();
+            btnEmpleados = new Button();
             groupBox2 = new GroupBox();
             btnCancelar = new Button();
-            btnEmpleados = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -109,7 +109,7 @@
             btnRVentas.Font = new Font("Segoe UI", 8.25F);
             btnRVentas.Image = (Image)resources.GetObject("btnRVentas.Image");
             btnRVentas.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRVentas.Location = new Point(145, 56);
+            btnRVentas.Location = new Point(217, 55);
             btnRVentas.Margin = new Padding(3, 4, 3, 4);
             btnRVentas.Name = "btnRVentas";
             btnRVentas.Size = new Size(169, 96);
@@ -123,7 +123,7 @@
             btnRProveedores.Font = new Font("Segoe UI", 6.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRProveedores.Image = (Image)resources.GetObject("btnRProveedores.Image");
             btnRProveedores.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRProveedores.Location = new Point(321, 56);
+            btnRProveedores.Location = new Point(393, 55);
             btnRProveedores.Margin = new Padding(3, 4, 3, 4);
             btnRProveedores.Name = "btnRProveedores";
             btnRProveedores.Size = new Size(169, 96);
@@ -137,7 +137,7 @@
             btnRProductos.Font = new Font("Segoe UI", 8.25F);
             btnRProductos.Image = (Image)resources.GetObject("btnRProductos.Image");
             btnRProductos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRProductos.Location = new Point(497, 56);
+            btnRProductos.Location = new Point(569, 55);
             btnRProductos.Margin = new Padding(3, 4, 3, 4);
             btnRProductos.Name = "btnRProductos";
             btnRProductos.Size = new Size(169, 96);
@@ -148,29 +148,45 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnEmpleados);
             groupBox1.Controls.Add(btnProductos);
             groupBox1.Controls.Add(btnProveedores);
             groupBox1.Controls.Add(btnCompras);
             groupBox1.Controls.Add(btnCategorías);
-            groupBox1.Location = new Point(14, 91);
+            groupBox1.Location = new Point(14, 13);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(791, 168);
+            groupBox1.Size = new Size(932, 168);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             groupBox1.Text = "ACCIONES";
+            // 
+            // btnEmpleados
+            // 
+            btnEmpleados.Font = new Font("Segoe UI", 8.25F);
+            btnEmpleados.Image = (Image)resources.GetObject("btnEmpleados.Image");
+            btnEmpleados.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEmpleados.Location = new Point(742, 40);
+            btnEmpleados.Margin = new Padding(3, 4, 3, 4);
+            btnEmpleados.Name = "btnEmpleados";
+            btnEmpleados.Size = new Size(156, 104);
+            btnEmpleados.TabIndex = 26;
+            btnEmpleados.Text = "Empleados";
+            btnEmpleados.TextAlign = ContentAlignment.MiddleRight;
+            btnEmpleados.UseVisualStyleBackColor = true;
+            btnEmpleados.Click += btnEmpleados_Click;
             // 
             // groupBox2
             // 
             groupBox2.Controls.Add(btnRProveedores);
             groupBox2.Controls.Add(btnRVentas);
             groupBox2.Controls.Add(btnRProductos);
-            groupBox2.Location = new Point(14, 313);
+            groupBox2.Location = new Point(12, 216);
             groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(3, 4, 3, 4);
-            groupBox2.Size = new Size(791, 173);
+            groupBox2.Size = new Size(934, 173);
             groupBox2.TabIndex = 8;
             groupBox2.TabStop = false;
             groupBox2.Text = "REPORTES";
@@ -180,37 +196,21 @@
             btnCancelar.Font = new Font("Microsoft Sans Serif", 8.25F);
             btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
             btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancelar.Location = new Point(665, 471);
+            btnCancelar.Location = new Point(801, 395);
             btnCancelar.Margin = new Padding(3, 2, 3, 2);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(145, 43);
+            btnCancelar.Size = new Size(144, 62);
             btnCancelar.TabIndex = 25;
             btnCancelar.Text = "Cerrar Sesión";
             btnCancelar.TextAlign = ContentAlignment.MiddleRight;
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
-            // btnEmpleados
-            // 
-            btnEmpleados.Font = new Font("Segoe UI", 8.25F);
-            btnEmpleados.Image = (Image)resources.GetObject("btnEmpleados.Image");
-            btnEmpleados.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEmpleados.Location = new Point(12, 473);
-            btnEmpleados.Margin = new Padding(3, 4, 3, 4);
-            btnEmpleados.Name = "btnEmpleados";
-            btnEmpleados.Size = new Size(169, 49);
-            btnEmpleados.TabIndex = 26;
-            btnEmpleados.Text = "Empleados";
-            btnEmpleados.TextAlign = ContentAlignment.MiddleRight;
-            btnEmpleados.UseVisualStyleBackColor = true;
-            btnEmpleados.Click += btnEmpleados_Click;
-            // 
             // MenuAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(822, 525);
-            Controls.Add(btnEmpleados);
+            ClientSize = new Size(957, 462);
             Controls.Add(btnCancelar);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);

@@ -28,7 +28,7 @@ namespace CapaPresentacion.Formularios
         {
             Clintes clientes = new Clintes();
             clientes.Show();
-            //this.Hide();
+            this.Hide();
         }
 
         private void btnDevoluciones_Click(object sender, EventArgs e)

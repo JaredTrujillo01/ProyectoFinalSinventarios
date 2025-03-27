@@ -45,7 +45,7 @@
             groupBox1.Controls.Add(btnVentas);
             groupBox1.Controls.Add(btnClientes);
             groupBox1.Controls.Add(btnDevoluciones);
-            groupBox1.Location = new Point(14, 61);
+            groupBox1.Location = new Point(15, 32);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 4, 3, 4);
@@ -102,7 +102,7 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(btnProductos);
-            groupBox2.Location = new Point(14, 243);
+            groupBox2.Location = new Point(15, 208);
             groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(3, 4, 3, 4);
@@ -116,7 +116,7 @@
             btnProductos.Font = new Font("Segoe UI", 8.25F);
             btnProductos.Image = (Image)resources.GetObject("btnProductos.Image");
             btnProductos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProductos.Location = new Point(339, 29);
+            btnProductos.Location = new Point(318, 28);
             btnProductos.Margin = new Padding(3, 4, 3, 4);
             btnProductos.Name = "btnProductos";
             btnProductos.Size = new Size(169, 104);
@@ -131,10 +131,10 @@
             btnCancelar.Font = new Font("Microsoft Sans Serif", 8.25F);
             btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
             btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancelar.Location = new Point(661, 12);
+            btnCancelar.Location = new Point(661, 382);
             btnCancelar.Margin = new Padding(3, 2, 3, 2);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(145, 43);
+            btnCancelar.Size = new Size(145, 63);
             btnCancelar.TabIndex = 26;
             btnCancelar.Text = "Cerrar Sesión";
             btnCancelar.TextAlign = ContentAlignment.MiddleRight;
@@ -145,7 +145,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(818, 427);
+            ClientSize = new Size(824, 456);
             Controls.Add(btnCancelar);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);

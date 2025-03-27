@@ -76,7 +76,7 @@ namespace CapaDatos
         {
             DataTable tablaResultado = new DataTable();
             comando.Connection = conexion.AbrirConexion();
-
+  
             comando.CommandText = "SELECT * FROM Producto WHERE Nombre LIKE '%' + @valor + '%'";
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@valor", valor);
