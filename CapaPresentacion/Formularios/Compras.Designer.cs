@@ -40,7 +40,6 @@
             btnRealizarCompra = new Button();
             btnCancelar = new Button();
             btnEliminarP = new Button();
-            btnAgregarP = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -57,10 +56,10 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Arial", 11.25F);
             label8.Location = new Point(10, 56);
             label8.Name = "label8";
-            label8.Size = new Size(88, 18);
+            label8.Size = new Size(79, 17);
             label8.TabIndex = 15;
             label8.Text = "Proveedor:";
             // 
@@ -77,10 +76,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Arial", 11.25F);
             label1.Location = new Point(345, 56);
             label1.Name = "label1";
-            label1.Size = new Size(55, 18);
+            label1.Size = new Size(53, 17);
             label1.TabIndex = 17;
             label1.Text = "Fecha:";
             // 
@@ -94,6 +93,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(10, 90);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
@@ -101,6 +101,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(674, 141);
             dataGridView1.TabIndex = 19;
+            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             // 
             // label3
             // 
@@ -114,6 +115,7 @@
             // 
             // txtTotal
             // 
+            txtTotal.Enabled = false;
             txtTotal.Location = new Point(67, 242);
             txtTotal.Margin = new Padding(3, 2, 3, 2);
             txtTotal.Name = "txtTotal";
@@ -165,21 +167,6 @@
             btnEliminarP.UseVisualStyleBackColor = true;
             btnEliminarP.Click += btnEliminarP_Click;
             // 
-            // btnAgregarP
-            // 
-            btnAgregarP.Font = new Font("Arial", 8.25F);
-            btnAgregarP.Image = (Image)resources.GetObject("btnAgregarP.Image");
-            btnAgregarP.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAgregarP.Location = new Point(331, 273);
-            btnAgregarP.Margin = new Padding(3, 2, 3, 2);
-            btnAgregarP.Name = "btnAgregarP";
-            btnAgregarP.Size = new Size(97, 46);
-            btnAgregarP.TabIndex = 43;
-            btnAgregarP.Text = "Agregar P";
-            btnAgregarP.TextAlign = ContentAlignment.MiddleRight;
-            btnAgregarP.UseVisualStyleBackColor = true;
-            btnAgregarP.Click += btnAgregarP_Click;
-            // 
             // Compras
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -187,7 +174,6 @@
             ClientSize = new Size(700, 343);
             Controls.Add(btnCancelar);
             Controls.Add(btnEliminarP);
-            Controls.Add(btnAgregarP);
             Controls.Add(btnRealizarCompra);
             Controls.Add(txtTotal);
             Controls.Add(label3);
@@ -222,6 +208,5 @@
         private Button btnRealizarCompra;
         private Button btnCancelar;
         private Button btnEliminarP;
-        private Button btnAgregarP;
     }
 }

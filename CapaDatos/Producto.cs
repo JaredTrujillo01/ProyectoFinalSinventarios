@@ -16,6 +16,13 @@ namespace CapaDatos
         public Producto()
         {
         }
+
+        public Producto(int id, string nombre, decimal precio)
+        {
+            IdProducto = id;
+            Nombre = nombre;
+            PrecioUnitario = precio;
+        }
         public Producto(int idProducto, string nombre)
         {
             IdProducto = idProducto;

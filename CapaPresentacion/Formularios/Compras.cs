@@ -69,9 +69,9 @@ namespace CapaPresentacion.Formularios
             var comboBoxColumn = dataGridView1.Columns["Producto"] as DataGridViewComboBoxColumn;
             if (comboBoxColumn != null)
             {
-                comboBoxColumn.DataSource = productos; 
+                comboBoxColumn.DataSource = productos;
                 comboBoxColumn.DisplayMember = "Nombre";
-                comboBoxColumn.ValueMember = "IdProducto"; 
+                comboBoxColumn.ValueMember = "IdProducto";
             }
         }
 
@@ -94,10 +94,10 @@ namespace CapaPresentacion.Formularios
         {
             DataGridViewComboBoxColumn comboBoxColumn = new DataGridViewComboBoxColumn();
             comboBoxColumn.HeaderText = "Producto";
-            comboBoxColumn.Name = "Producto"; 
-            comboBoxColumn.DataPropertyName = "IdProducto"; 
-            comboBoxColumn.DisplayMember = "Nombre"; 
-            comboBoxColumn.ValueMember = "IdProducto"; 
+            comboBoxColumn.Name = "Producto";
+            comboBoxColumn.DataPropertyName = "IdProducto";
+            comboBoxColumn.DisplayMember = "Nombre";
+            comboBoxColumn.ValueMember = "IdProducto";
 
             dataGridView1.Columns.Add(comboBoxColumn);
 
@@ -107,13 +107,15 @@ namespace CapaPresentacion.Formularios
             dataGridView1.Columns.Add(cantidadColumn);
 
             DataGridViewTextBoxColumn precioColumn = new DataGridViewTextBoxColumn();
-            precioColumn.HeaderText = "Precio";
-            precioColumn.Name = "Precio";
+            precioColumn.HeaderText = "PrecioUnitario";
+            precioColumn.Name = "PrecioUnitario";
+            precioColumn.ReadOnly = true;
             dataGridView1.Columns.Add(precioColumn);
 
             DataGridViewTextBoxColumn subtotalColumn = new DataGridViewTextBoxColumn();
             subtotalColumn.HeaderText = "Subtotal";
             subtotalColumn.Name = "Subtotal";
+            subtotalColumn.ReadOnly = true;
             dataGridView1.Columns.Add(subtotalColumn);
         }
 
@@ -142,41 +144,6 @@ namespace CapaPresentacion.Formularios
             txtTotal.Text = total.ToString("F2");
         }
 
-
-        private void btnAgregarP_Click(object sender, EventArgs e)
-        {
-            int rowIndex = dataGridView1.CurrentCell.RowIndex;
-
-            if (dataGridView1.Rows[rowIndex].Cells["Producto"].Value == null)
-            {
-                MessageBox.Show("Selecciona un producto válido.");
-                return;
-            }
-
-            int idProducto = Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells["Producto"].Value);
-            Producto productoSeleccionado = productos.FirstOrDefault(p => p.IdProducto == idProducto);
-
-            if (productoSeleccionado == null)
-            {
-                MessageBox.Show("Producto no encontrado.");
-                return;
-            }
-
-            if (!int.TryParse(dataGridView1.Rows[rowIndex].Cells["Cantidad"].Value?.ToString(), out int cantidad) || cantidad <= 0)
-            {
-                MessageBox.Show("Ingrese una cantidad válida.");
-                return;
-            }
-
-            decimal precioCompra = productoSeleccionado.PrecioUnitario;
-            decimal subtotal = cantidad * precioCompra;
-
-            dataGridView1.Rows[rowIndex].Cells["Precio"].Value = precioCompra;
-            dataGridView1.Rows[rowIndex].Cells["Subtotal"].Value = subtotal;
-
-            CalcularTotalCompra();
-        }
-
         private void btnCancelar_Click_2(object sender, EventArgs e)
         {
             MenuAdmin menuA = new MenuAdmin();
@@ -189,6 +156,10 @@ namespace CapaPresentacion.Formularios
             ConfigurarDataGridView();
             CargarProductos();
             CargarProveedores();
+
+            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
+            dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
+
         }
 
         private void btnEliminarP_Click(object sender, EventArgs e)
@@ -209,34 +180,62 @@ namespace CapaPresentacion.Formularios
         {
             try
             {
-                int idEmpleado = 1;
-                int idProveedor = proveedores.FirstOrDefault(p => p.Nombre == cmbProveedores.SelectedItem.ToString()).IdProveedor; // Obtener el ID del proveedor
-                DateTime fechaCompra = DateTime.Now;
-                decimal totalCompra = Convert.ToDecimal(txtTotal.Text);
+                if (cmbProveedores.SelectedItem == null)
+                {
+                    MessageBox.Show("Seleccione un proveedor.");
+                    return;
+                }
 
+                int idEmpleado = 1; 
+                int idProveedor = proveedores.FirstOrDefault(p => p.Nombre == cmbProveedores.SelectedItem.ToString())?.IdProveedor ?? 0;
+                if (idProveedor == 0)
+                {
+                    MessageBox.Show("Proveedor no válido.");
+                    return;
+                }
+
+                DateTime fechaCompra = DateTime.Now;
+                decimal totalCompra = 0;
                 List<DetalleCompra> detallesCompra = new List<DetalleCompra>();
 
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     if (row.IsNewRow) continue;
 
-                    int idProducto = productos.FirstOrDefault(p => p.Nombre == row.Cells["Producto"].Value.ToString()).IdProducto;
+                    if (row.Cells["Producto"].Value == null || row.Cells["Cantidad"].Value == null)
+                    {
+                        MessageBox.Show("Asegúrese de seleccionar un producto y una cantidad válida.");
+                        return;
+                    }
+
+                    int idProducto = Convert.ToInt32(row.Cells["Producto"].Value);
                     int cantidad = Convert.ToInt32(row.Cells["Cantidad"].Value);
-                    decimal precioCompra = Convert.ToDecimal(row.Cells["Precio"].Value);
+                    decimal precioCompra = productos.FirstOrDefault(p => p.IdProducto == idProducto)?.PrecioUnitario ?? 0;
+
+                    if (cantidad <= 0 || precioCompra <= 0)
+                    {
+                        MessageBox.Show("Cantidad o precio inválido para un producto.");
+                        return;
+                    }
 
                     detallesCompra.Add(new DetalleCompra(idProducto, cantidad, precioCompra));
+                    totalCompra += cantidad * precioCompra;
                 }
 
-                objetoCN.InsertarCompra(idEmpleado, idProveedor, fechaCompra, totalCompra, detallesCompra);
-
-                dataGridView1.Rows.Clear();
-                txtTotal.Text = "0.00";
+                int idCompra = objetoCN.InsertarCompra(idEmpleado, idProveedor, fechaCompra, totalCompra, detallesCompra);
+                if (idCompra == 0)
+                {
+                    MessageBox.Show("Error al registrar la compra.");
+                    return;
+                }
 
                 foreach (var detalle in detallesCompra)
                 {
                     objetoCN.ActualizarStock(detalle.IdProducto, detalle.Cantidad);
                 }
 
+                dataGridView1.Rows.Clear();
+                txtTotal.Text = "0.00";
                 MessageBox.Show("Compra realizada exitosamente.");
             }
             catch (Exception ex)
@@ -244,5 +243,50 @@ namespace CapaPresentacion.Formularios
                 MessageBox.Show("Error al realizar la compra: " + ex.Message);
             }
         }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["Producto"].Index && e.RowIndex >= 0)
+            {
+                var row = dataGridView1.Rows[e.RowIndex];
+                if (row.Cells["Producto"].Value == null) return;
+
+                int idProducto = Convert.ToInt32(row.Cells["Producto"].Value);
+                Producto productoSeleccionado = productos.FirstOrDefault(p => p.IdProducto == idProducto);
+
+                if (productoSeleccionado != null)
+                {
+                    row.Cells["PrecioUnitario"].Value = productoSeleccionado.PrecioUnitario;
+                    CalcularSubtotal(row);
+                }
+            }
+        }
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["Cantidad"].Index && e.RowIndex >= 0)
+            {
+                var row = dataGridView1.Rows[e.RowIndex];
+                CalcularSubtotal(row);
+            }
+        }
+
+        private void CalcularSubtotal(DataGridViewRow row)
+        {
+            if (row.Cells["Cantidad"].Value != null && row.Cells["PrecioUnitario"].Value != null)
+            {
+                if (int.TryParse(row.Cells["Cantidad"].Value.ToString(), out int cantidad) && cantidad > 0)
+                {
+                    decimal precio = Convert.ToDecimal(row.Cells["PrecioUnitario"].Value);
+                    row.Cells["Subtotal"].Value = cantidad * precio;
+
+                    CalcularTotalCompra();
+                }
+                else
+                {
+                    row.Cells["Subtotal"].Value = 0;
+                }
+            }
+        }
+
     }
 }

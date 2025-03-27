@@ -8,7 +8,7 @@ namespace CapaNegocios
     {
         private CD_Compra objetoCD = new CD_Compra();
 
-        public void InsertarCompra(int idEmpleado, int idProveedor, DateTime fechaCompra, decimal totalCompra, List<DetalleCompra> detalleCompras)
+        public int InsertarCompra(int idEmpleado, int idProveedor, DateTime fechaCompra, decimal totalCompra, List<DetalleCompra> detalleCompras)
         {
             objetoCD.InsertarCompra(idEmpleado, idProveedor, fechaCompra, totalCompra);
 
@@ -18,7 +18,11 @@ namespace CapaNegocios
             {
                 objetoCD.InsertarDetalleCompra(idCompra, detalle.IdProducto, detalle.Cantidad, detalle.PrecioCompra);
             }
+
+            return idCompra;
         }
+
+
 
         public List<Producto> ObtenerProductos()
         {

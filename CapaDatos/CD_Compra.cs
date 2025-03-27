@@ -37,7 +37,8 @@ namespace CapaDatos
             {
                 productos.Add(new Producto(
                     Convert.ToInt32(reader["IdProducto"]),
-                    reader["Nombre"].ToString()
+                    reader["Nombre"].ToString(),
+                    Convert.ToDecimal(reader["PrecioUnitario"])
                 ));
             }
 
@@ -80,12 +81,22 @@ namespace CapaDatos
         public int ObtenerUltimaCompraId()
         {
             int idCompra = 0;
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "SELECT MAX(IdCompra) FROM Compra";
-            idCompra = Convert.ToInt32(comando.ExecuteScalar());
+            string query = "SELECT MAX(IdCompra) FROM Compra";
+
+            using (SqlCommand command = new SqlCommand(query, conexion.AbrirConexion()))
+            {
+                object result = command.ExecuteScalar();
+                if (result != DBNull.Value)
+                {
+                    idCompra = Convert.ToInt32(result);
+                }
+            }
+
             conexion.CerrarConexion();
             return idCompra;
         }
+
+
         public void InsertarDetalleCompra(int idCompra, int idProducto, int cantidad, decimal precioCompra)
         {
             comando.Connection = conexion.AbrirConexion();
