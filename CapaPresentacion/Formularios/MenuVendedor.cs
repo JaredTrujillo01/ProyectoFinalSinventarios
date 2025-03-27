@@ -44,5 +44,12 @@ namespace CapaPresentacion.Formularios
             salir.Show();
             this.Hide();
         }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            Productos productos = new Productos();
+            productos.Show();
+            this.Hide();
+        }
     }
 }

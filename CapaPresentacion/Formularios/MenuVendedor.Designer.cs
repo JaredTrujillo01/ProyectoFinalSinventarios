@@ -124,6 +124,7 @@
             btnProductos.Text = "PRODUCTOS";
             btnProductos.TextAlign = ContentAlignment.MiddleRight;
             btnProductos.UseVisualStyleBackColor = true;
+            btnProductos.Click += btnProductos_Click;
             // 
             // btnCancelar
             // 

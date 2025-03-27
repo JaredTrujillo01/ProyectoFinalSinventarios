@@ -16,5 +16,12 @@ namespace CapaPresentacion.Formularios
         {
             InitializeComponent();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            MenuVendedor ven = new MenuVendedor();
+            ven.Show();
+            this.Hide();
+        }
     }
 }

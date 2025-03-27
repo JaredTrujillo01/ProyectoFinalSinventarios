@@ -32,7 +32,7 @@ namespace CapaPresentacion.Formularios
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
-            MenuAdmin menuA = new MenuAdmin();
+            MenuVendedor menuA = new MenuVendedor();
             menuA.Show();
             this.Hide();
         }
