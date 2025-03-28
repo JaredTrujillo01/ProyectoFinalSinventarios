@@ -57,4 +57,12 @@ namespace CapaDatos
             }
         }
     }
+
+    public static class Sesion
+    {
+        public static int IdEmpleado { get; set; }
+        public static string NombreEmpleado { get; set; }
+        public static string Rol { get; set; }
+    }
+
 }

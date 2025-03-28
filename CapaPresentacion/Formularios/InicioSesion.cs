@@ -1,4 +1,5 @@
-﻿using CapaNegocios;
+﻿using CapaDatos;
+using CapaNegocios;
 using CapaPresentacion.Formularios;
 using Microsoft.VisualBasic.Logging;
 using System;
@@ -29,6 +30,7 @@ namespace CapaPresentacion
             string password = txtPassword.Text.Trim();
 
             string nombreCompleto, rol;
+            int idEmpleado;
 
             OcultarMensajesError();
 
@@ -48,8 +50,12 @@ namespace CapaPresentacion
 
             if (!camposValidos) return;
 
-            if (login.IniciarSesion(usuario, password, out nombreCompleto, out rol))
+            if (login.IniciarSesion(usuario, password, out nombreCompleto, out rol, out idEmpleado))
             {
+                Sesion.IdEmpleado = idEmpleado;
+                Sesion.NombreEmpleado = nombreCompleto;
+                Sesion.Rol = rol;
+
                 MessageBox.Show("Bienvenido, " + nombreCompleto, "Inicio de Sesión Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 if (rol == "Administrador")

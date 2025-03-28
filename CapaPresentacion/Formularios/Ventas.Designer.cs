@@ -29,38 +29,33 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas));
-            button3 = new Button();
+            btnRealizarVenta = new Button();
             btnEliminarP = new Button();
-            btnAgregarP = new Button();
-            textBox1 = new TextBox();
+            txtTotal = new TextBox();
             label3 = new Label();
             dataGridView1 = new DataGridView();
-            Productos = new DataGridViewComboBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
-            PrecioCompra = new DataGridViewTextBoxColumn();
-            Subtotal = new DataGridViewTextBoxColumn();
-            dateTimePicker1 = new DateTimePicker();
+            dtpFecha = new DateTimePicker();
             label1 = new Label();
-            comboBox1 = new ComboBox();
+            cmbCliente = new ComboBox();
             label8 = new Label();
             label2 = new Label();
             btnCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // button3
+            // btnRealizarVenta
             // 
-            button3.Font = new Font("Arial", 8.25F);
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(16, 284);
-            button3.Margin = new Padding(3, 2, 3, 2);
-            button3.Name = "button3";
-            button3.Size = new Size(188, 43);
-            button3.TabIndex = 35;
-            button3.Text = "Realizar Venta";
-            button3.TextAlign = ContentAlignment.MiddleRight;
-            button3.UseVisualStyleBackColor = true;
+            btnRealizarVenta.Font = new Font("Arial", 8.25F);
+            btnRealizarVenta.Image = (Image)resources.GetObject("btnRealizarVenta.Image");
+            btnRealizarVenta.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRealizarVenta.Location = new Point(16, 284);
+            btnRealizarVenta.Margin = new Padding(3, 2, 3, 2);
+            btnRealizarVenta.Name = "btnRealizarVenta";
+            btnRealizarVenta.Size = new Size(188, 43);
+            btnRealizarVenta.TabIndex = 35;
+            btnRealizarVenta.Text = "Realizar Venta";
+            btnRealizarVenta.TextAlign = ContentAlignment.MiddleRight;
+            btnRealizarVenta.UseVisualStyleBackColor = true;
             // 
             // btnEliminarP
             // 
@@ -76,27 +71,14 @@
             btnEliminarP.TextAlign = ContentAlignment.MiddleRight;
             btnEliminarP.UseVisualStyleBackColor = true;
             // 
-            // btnAgregarP
+            // txtTotal
             // 
-            btnAgregarP.Font = new Font("Arial", 8.25F);
-            btnAgregarP.Image = (Image)resources.GetObject("btnAgregarP.Image");
-            btnAgregarP.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAgregarP.Location = new Point(359, 256);
-            btnAgregarP.Margin = new Padding(3, 2, 3, 2);
-            btnAgregarP.Name = "btnAgregarP";
-            btnAgregarP.Size = new Size(97, 46);
-            btnAgregarP.TabIndex = 33;
-            btnAgregarP.Text = "Agregar P";
-            btnAgregarP.TextAlign = ContentAlignment.MiddleRight;
-            btnAgregarP.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(70, 241);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(134, 23);
-            textBox1.TabIndex = 32;
+            txtTotal.Enabled = false;
+            txtTotal.Location = new Point(70, 241);
+            txtTotal.Margin = new Padding(3, 2, 3, 2);
+            txtTotal.Name = "txtTotal";
+            txtTotal.Size = new Size(134, 23);
+            txtTotal.TabIndex = 32;
             // 
             // label3
             // 
@@ -111,7 +93,6 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Productos, Cantidad, PrecioCompra, Subtotal });
             dataGridView1.Location = new Point(13, 88);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
@@ -119,68 +100,40 @@
             dataGridView1.Size = new Size(674, 141);
             dataGridView1.TabIndex = 30;
             // 
-            // Productos
+            // dtpFecha
             // 
-            Productos.HeaderText = "Producto";
-            Productos.MinimumWidth = 6;
-            Productos.Name = "Productos";
-            Productos.Width = 125;
-            // 
-            // Cantidad
-            // 
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.MinimumWidth = 6;
-            Cantidad.Name = "Cantidad";
-            Cantidad.Width = 125;
-            // 
-            // PrecioCompra
-            // 
-            PrecioCompra.HeaderText = "Precio";
-            PrecioCompra.MinimumWidth = 6;
-            PrecioCompra.Name = "PrecioCompra";
-            PrecioCompra.Width = 125;
-            // 
-            // Subtotal
-            // 
-            Subtotal.HeaderText = "Subtotal";
-            Subtotal.MinimumWidth = 6;
-            Subtotal.Name = "Subtotal";
-            Subtotal.Width = 125;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(414, 55);
-            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(274, 23);
-            dateTimePicker1.TabIndex = 29;
+            dtpFecha.Location = new Point(414, 55);
+            dtpFecha.Margin = new Padding(3, 2, 3, 2);
+            dtpFecha.Name = "dtpFecha";
+            dtpFecha.Size = new Size(274, 23);
+            dtpFecha.TabIndex = 29;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(347, 55);
             label1.Name = "label1";
-            label1.Size = new Size(55, 18);
+            label1.Size = new Size(53, 17);
             label1.TabIndex = 28;
             label1.Text = "Fecha:";
             // 
-            // comboBox1
+            // cmbCliente
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(88, 53);
-            comboBox1.Margin = new Padding(3, 2, 3, 2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(255, 23);
-            comboBox1.TabIndex = 27;
+            cmbCliente.FormattingEnabled = true;
+            cmbCliente.Location = new Point(88, 53);
+            cmbCliente.Margin = new Padding(3, 2, 3, 2);
+            cmbCliente.Name = "cmbCliente";
+            cmbCliente.Size = new Size(255, 23);
+            cmbCliente.TabIndex = 27;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Arial", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.Location = new Point(13, 55);
             label8.Name = "label8";
-            label8.Size = new Size(63, 18);
+            label8.Size = new Size(57, 17);
             label8.TabIndex = 26;
             label8.Text = "Cliente:";
             // 
@@ -215,15 +168,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 338);
             Controls.Add(btnCancelar);
-            Controls.Add(button3);
+            Controls.Add(btnRealizarVenta);
             Controls.Add(btnEliminarP);
-            Controls.Add(btnAgregarP);
-            Controls.Add(textBox1);
+            Controls.Add(txtTotal);
             Controls.Add(label3);
             Controls.Add(dataGridView1);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(dtpFecha);
             Controls.Add(label1);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbCliente);
             Controls.Add(label8);
             Controls.Add(label2);
             Margin = new Padding(3, 2, 3, 2);
@@ -239,19 +191,14 @@
 
         #endregion
 
-        private Button button3;
+        private Button btnRealizarVenta;
         private Button btnEliminarP;
-        private Button btnAgregarP;
-        private TextBox textBox1;
+        private TextBox txtTotal;
         private Label label3;
         private DataGridView dataGridView1;
-        private DataGridViewComboBoxColumn Productos;
-        private DataGridViewTextBoxColumn Cantidad;
-        private DataGridViewTextBoxColumn PrecioCompra;
-        private DataGridViewTextBoxColumn Subtotal;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpFecha;
         private Label label1;
-        private ComboBox comboBox1;
+        private ComboBox cmbCliente;
         private Label label8;
         private Label label2;
         private Button btnCancelar;

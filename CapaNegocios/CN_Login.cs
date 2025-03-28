@@ -10,7 +10,7 @@ namespace CapaNegocios
     {
         private CD_Login objetoCD = new CD_Login();
 
-        public bool IniciarSesion(string usuario, string password, out string nombreCompleto, out string rol)
+        public bool IniciarSesion(string usuario, string password, out string nombreCompleto, out string rol, out int idEmpleado)
         {
             DataTable resultado = objetoCD.ValidarUsuario(usuario, password);
 
@@ -18,12 +18,14 @@ namespace CapaNegocios
             {
                 nombreCompleto = resultado.Rows[0]["Nombre"].ToString() + " " + resultado.Rows[0]["Apellido"].ToString();
                 rol = resultado.Rows[0]["Rol"].ToString();
+                idEmpleado = Convert.ToInt32(resultado.Rows[0]["EmpleadoID"]);
                 return true;
             }
             else
             {
                 nombreCompleto = "";
                 rol = "";
+                idEmpleado = 0;
                 return false;
             }
         }

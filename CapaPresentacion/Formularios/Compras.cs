@@ -186,7 +186,7 @@ namespace CapaPresentacion.Formularios
                     return;
                 }
 
-                int idEmpleado = 1; 
+                int idEmpleado = Sesion.IdEmpleado;
                 int idProveedor = proveedores.FirstOrDefault(p => p.Nombre == cmbProveedores.SelectedItem.ToString())?.IdProveedor ?? 0;
                 if (idProveedor == 0)
                 {
