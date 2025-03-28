@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocios;
+using CapaDatos;
 
 namespace CapaPresentacion.Formularios
 {
@@ -163,11 +164,24 @@ namespace CapaPresentacion.Formularios
                 }
             }
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            MenuAdmin menuA = new MenuAdmin();
-            menuA.Show();
+            if (Sesion.Rol == "Administrador")
+            {
+                MenuAdmin menuA = new MenuAdmin();
+                menuA.Show();
+            }
+            else if (Sesion.Rol == "Vendedor")
+            {
+                MenuVendedor menuV = new MenuVendedor();
+                menuV.Show();
+            }
+            else
+            {
+                MessageBox.Show("Rol no reconocido. No se puede redirigir al menú correspondiente.");
+                return;
+            }
+
             this.Hide();
         }
 
