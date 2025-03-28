@@ -25,6 +25,35 @@ namespace CapaDatos
             conexion.CerrarConexion();
         }
 
+        public List<Producto> ObtenerProductosPorProveedor(int idProveedor)
+        {
+            List<Producto> productos = new List<Producto>();
+
+            string query = "SELECT IdProducto, Nombre, PrecioUnitario FROM Producto WHERE ProveedorID = @ProveedorID";
+
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = query;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@ProveedorID", idProveedor);
+
+            SqlDataReader reader = comando.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Producto producto = new Producto
+                {
+                    IdProducto = Convert.ToInt32(reader["IdProducto"]),
+                    Nombre = reader["Nombre"].ToString(),
+                    PrecioUnitario = Convert.ToDecimal(reader["PrecioUnitario"])
+                };
+                productos.Add(producto);
+            }
+
+            conexion.CerrarConexion();
+
+            return productos;
+        }
+
         public List<Producto> ObtenerProductos()
         {
             List<Producto> productos = new List<Producto>();

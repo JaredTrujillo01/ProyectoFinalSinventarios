@@ -22,8 +22,6 @@ namespace CapaNegocios
             return idCompra;
         }
 
-
-
         public List<Producto> ObtenerProductos()
         {
             return objetoCD.ObtenerProductos();
@@ -37,6 +35,11 @@ namespace CapaNegocios
         public void ActualizarStock(int idProducto, int cantidad)
         {
             objetoCD.ActualizarStock(idProducto, cantidad);
+        }
+
+        public List<Producto> ObtenerProductosPorProveedor(int idProveedor)
+        {
+            return objetoCD.ObtenerProductosPorProveedor(idProveedor);
         }
     }
 }

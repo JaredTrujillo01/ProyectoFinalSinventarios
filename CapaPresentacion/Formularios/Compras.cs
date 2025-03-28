@@ -24,45 +24,12 @@ namespace CapaPresentacion.Formularios
             //CargarProductos();
             //CargarProveedores();
         }
-
-        //private void CargarProductos()
-        //{
-        //    productos = objetoCN.ObtenerProductos();
-        //    if (productos == null || productos.Count == 0)
-        //    {
-        //        MessageBox.Show("No se han cargado productos.");
-        //        return;
-        //    }
-
-        //    // Depuración: Verificar si los productos se cargaron
-        //    foreach (var producto in productos)
-        //    {
-        //        Console.WriteLine(producto.Nombre);  // Ver en la consola si los productos están cargados
-        //    }
-
-        //    // Asegurarse de que cada fila del DataGridView tenga un ComboBox que cargue los productos
-        //    foreach (DataGridViewRow row in dataGridView1.Rows)
-        //    {
-        //        if (row.IsNewRow) continue; // Ignorar la fila nueva
-
-        //        // Obtener la celda que contiene el ComboBox
-        //        var comboBoxCell = row.Cells["Producto"] as DataGridViewComboBoxCell;
-        //        if (comboBoxCell != null)
-        //        {
-        //            comboBoxCell.Items.Clear(); // Limpiar los elementos anteriores
-        //            foreach (var producto in productos)
-        //            {
-        //                comboBoxCell.Items.Add(producto.Nombre); // Agregar el nombre del producto
-        //            }
-        //        }
-        //    }
-        //}
-        private void CargarProductos()
+        private void CargarProductos(int idProveedor)
         {
-            productos = objetoCN.ObtenerProductos();
+            productos = objetoCN.ObtenerProductosPorProveedor(idProveedor);
             if (productos == null || productos.Count == 0)
             {
-                MessageBox.Show("No se han cargado productos.");
+                MessageBox.Show("No se han cargado productos para este proveedor.");
                 return;
             }
 
@@ -74,7 +41,6 @@ namespace CapaPresentacion.Formularios
                 comboBoxColumn.ValueMember = "IdProducto";
             }
         }
-
 
         private void CargarProveedores()
         {
@@ -154,8 +120,13 @@ namespace CapaPresentacion.Formularios
         private void Compras_Load(object sender, EventArgs e)
         {
             ConfigurarDataGridView();
-            CargarProductos();
             CargarProveedores();
+            if (proveedores.Count > 0)
+            {
+                cmbProveedores.SelectedIndex = 0; 
+                CargarProductos(proveedores[0].IdProveedor); 
+            }
+            cmbProveedores.SelectedIndexChanged += cmbProveedores_SelectedIndexChanged;
 
             dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
             dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
@@ -284,6 +255,23 @@ namespace CapaPresentacion.Formularios
                 else
                 {
                     row.Cells["Subtotal"].Value = 0;
+                }
+            }
+        }
+        private void cmbProveedores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbProveedores.SelectedItem != null)
+            {
+                string nombreProveedor = cmbProveedores.SelectedItem.ToString();
+                int idProveedor = proveedores.FirstOrDefault(p => p.Nombre == nombreProveedor)?.IdProveedor ?? 0;
+
+                if (idProveedor > 0)
+                {
+                    CargarProductos(idProveedor);
+                }
+                else
+                {
+                    MessageBox.Show("Proveedor no válido.");
                 }
             }
         }
