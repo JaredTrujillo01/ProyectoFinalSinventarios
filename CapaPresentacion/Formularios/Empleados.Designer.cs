@@ -43,10 +43,10 @@
             btnCancelar.Font = new Font("Arial", 9.75F);
             btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
             btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancelar.Location = new Point(861, 9);
+            btnCancelar.Location = new Point(753, 7);
             btnCancelar.Margin = new Padding(3, 2, 3, 2);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(123, 50);
+            btnCancelar.Size = new Size(108, 38);
             btnCancelar.TabIndex = 24;
             btnCancelar.Text = "Cancelar";
             btnCancelar.TextAlign = ContentAlignment.MiddleRight;
@@ -57,10 +57,11 @@
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 64);
+            dataGridView1.Location = new Point(10, 48);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(972, 374);
+            dataGridView1.Size = new Size(850, 280);
             dataGridView1.TabIndex = 25;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
@@ -68,27 +69,28 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Arial", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(12, 16);
+            label7.Location = new Point(10, 12);
             label7.Name = "label7";
-            label7.Size = new Size(167, 21);
+            label7.Size = new Size(137, 17);
             label7.TabIndex = 41;
             label7.Text = "Lista de Empleados";
             // 
             // txtBuscar
             // 
-            txtBuscar.Location = new Point(185, 16);
+            txtBuscar.Location = new Point(162, 12);
+            txtBuscar.Margin = new Padding(3, 2, 3, 2);
             txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(300, 27);
+            txtBuscar.Size = new Size(263, 23);
             txtBuscar.TabIndex = 42;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // BtnBuscar
             // 
             BtnBuscar.Font = new Font("Arial", 9.75F);
-            BtnBuscar.Location = new Point(491, 16);
+            BtnBuscar.Location = new Point(430, 12);
             BtnBuscar.Margin = new Padding(3, 2, 3, 2);
             BtnBuscar.Name = "BtnBuscar";
-            BtnBuscar.Size = new Size(108, 28);
+            BtnBuscar.Size = new Size(94, 21);
             BtnBuscar.TabIndex = 43;
             BtnBuscar.Text = "Buscar";
             BtnBuscar.UseVisualStyleBackColor = true;
@@ -99,9 +101,10 @@
             btnEliminar.Font = new Font("Arial", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
             btnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEliminar.Location = new Point(741, 9);
+            btnEliminar.Location = new Point(648, 7);
+            btnEliminar.Margin = new Padding(3, 2, 3, 2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(114, 50);
+            btnEliminar.Size = new Size(100, 38);
             btnEliminar.TabIndex = 44;
             btnEliminar.Text = "Eliminar ";
             btnEliminar.TextAlign = ContentAlignment.MiddleRight;
@@ -110,16 +113,20 @@
             // 
             // Empleados
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(996, 450);
+            ClientSize = new Size(872, 338);
             Controls.Add(btnEliminar);
             Controls.Add(BtnBuscar);
             Controls.Add(txtBuscar);
             Controls.Add(label7);
             Controls.Add(dataGridView1);
             Controls.Add(btnCancelar);
+            Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Empleados";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Empleados";
             Load += Empleados_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
