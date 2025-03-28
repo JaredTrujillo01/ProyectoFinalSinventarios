@@ -56,6 +56,7 @@
             btnRealizarVenta.Text = "Realizar Venta";
             btnRealizarVenta.TextAlign = ContentAlignment.MiddleRight;
             btnRealizarVenta.UseVisualStyleBackColor = true;
+            btnRealizarVenta.Click += btnRealizarVenta_Click;
             // 
             // btnEliminarP
             // 
@@ -70,6 +71,7 @@
             btnEliminarP.Text = "Eliminar P";
             btnEliminarP.TextAlign = ContentAlignment.MiddleRight;
             btnEliminarP.UseVisualStyleBackColor = true;
+            btnEliminarP.Click += btnEliminarP_Click;
             // 
             // txtTotal
             // 
@@ -92,6 +94,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(13, 88);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
@@ -184,6 +187,7 @@
             Name = "Ventas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Ventas";
+            Load += Ventas_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

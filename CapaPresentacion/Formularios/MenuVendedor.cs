@@ -19,9 +19,17 @@ namespace CapaPresentacion.Formularios
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            Ventas ventas = new Ventas();
+            try
+            {
+                Ventas ventas = new Ventas();
             ventas.Show();
             this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message + "\n" + ex.StackTrace);
+            }
+
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
